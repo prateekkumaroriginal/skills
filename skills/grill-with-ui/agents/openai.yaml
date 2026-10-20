@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill with UI"
+  short_description: "Interactive answer UI for grill-with-docs"
+policy:
+  allow_implicit_invocation: false
