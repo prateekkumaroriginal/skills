@@ -16,6 +16,8 @@ disable-model-invocation: true
 - Make Explain more write exactly `Explain more` into the same field and answer state, clearing the previous option or recommendation selection.
 - Place Copy answers button at the end. Copy only the answers without extra fluff.
 - Compose each entry as `<question number>: <current field text>`, with a blank line between entries. Use `Unanswered` for an empty field.
+- For Copy answers, first try `document.execCommand('copy')` synchronously during the click with the composed text selected. If it returns false or throws, try `navigator.clipboard.writeText()` with the same text. Show manual copying only if both methods fail.
+- Copy answers performs only the copy operation. Do not submit or send answers, invoke the agent, save state, advance the interview, navigate, or change answer fields. On success, leave the UI unchanged. Preserve focus, selection, and scroll position, restoring any temporary changes needed for copying. Revealing manual copy text after both methods fail is the only permitted additional action.
 
 The output should be formatted like this:
 
