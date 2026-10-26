@@ -1,5 +1,5 @@
 ---
-name: full-send
+name: rf-loop
 description: PR, review-fix loop, merge
 disable-model-invocation: true
 ---

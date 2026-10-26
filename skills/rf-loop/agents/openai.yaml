@@ -1,5 +1,5 @@
 interface:
-  display_name: "Full send"
+  display_name: "RF loop"
   short_description: "Review a PR for up to three rounds and merge when clear"
 policy:
   allow_implicit_invocation: false
