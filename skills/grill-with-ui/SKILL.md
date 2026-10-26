@@ -6,6 +6,7 @@ disable-model-invocation: true
 
 1. Load `grill-with-docs` from the active skill catalog. Use it for questions as this is the engine. If a required dependency is unavailable, name it and establish that limitation before claiming to run the full interview.
 2. Present the questions it produces through an interactive UI.
+3. Group its questions into rounds. Max 10 questions per round.
 
 # UI behavior
 
