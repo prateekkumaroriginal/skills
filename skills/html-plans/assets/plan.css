@@ -65,7 +65,6 @@ h3 { font-size: var(--size-large); line-height: 1.33; }
 
 /* Header */
 .hero { padding-block: 80px 40px; display: grid; gap: 24px; }
-.label { font: 400 var(--size-small)/1.5 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); margin: 0; }
 .deck { font-size: var(--size-large); line-height: 1.5; margin: 0; }
 .meta { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: var(--size-small); color: var(--dim); margin: 0; }
 
@@ -77,7 +76,6 @@ h3 { font-size: var(--size-large); line-height: 1.33; }
 /* Sections: separated by space only */
 section { padding-block: 48px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; scroll-margin-top: 16px; min-width: 0; }
 section > h2 { margin-bottom: 4px; }
-.section-label { font: 400 var(--size-small)/1.5 var(--mono); color: var(--accent); margin: 0 0 -16px; }
 p, ul, ol { margin: 0; }
 ul, ol { padding-left: 24px; }
 li + li { margin-top: 8px; }

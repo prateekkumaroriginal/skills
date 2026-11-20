@@ -30,7 +30,7 @@ The page should stay comfortable for an hour of reading. Use a cool, black-ish c
 | Body | `#b9bec7` | All reading text |
 | Dim | `#8b919b` | Metadata, captions, labels |
 | Faint | `#767c87` | Footer and code comments |
-| Accent | `#7ab1ec` | Title emphasis, step and section labels, link hover, focus, diagram request paths |
+| Accent | `#7ab1ec` | Title emphasis, step labels, link hover, focus, diagram request paths |
 | Teal | `#8fd0c4` | Secondary only: diagram return paths, code strings, confirmed states (with a text label) |
 | Code | `#b3c8de` | Inline code text |
 
@@ -55,7 +55,7 @@ Use the accent sparingly. Do not use amber, gold, bright green, or pure white te
 | 12px / 16px | Geist Mono 400 / Geist 700 | Diagram labels / diagram box titles |
 
 - Body line height 1.6; code blocks 1.75. Do not shrink text inside cards or steps below the 20px reading size.
-- Put an uppercase Geist Mono label (letter-spacing 0.08em, dim) above the title, such as "Plan" or "Engineering".
+- Start the page with the title itself. Do not put an eyebrow, badge, or category label (such as "Plan", "Explainer", "Engineering", or "Announcement") above the title or above section headings.
 
 ## Layout
 
@@ -74,7 +74,7 @@ Use the accent sparingly. Do not use amber, gold, bright green, or pure white te
 
 Use short sentences and plain, literal titles such as "Profile performance benchmarks" or "Remove Bootstrap". No fluffy, promotional, or clever wording in titles, summaries, or section headings. Keep only what the reader needs to understand the proposal, its limits, and how completion is verified. A user-approved title can retain its wording.
 
-Keep each explanation in one place. A contents row already maps the sections; add an overview table only when it supplies a different comparison. Use one header summary, and omit repeated goal sections, decorative metadata, promotional section slogans, and bulk expand controls. Number sections only when order is part of the information.
+Keep each explanation in one place. A contents row already maps the sections; add an overview table only when it supplies a different comparison. Use one header summary, and omit repeated goal sections, decorative metadata, promotional section slogans, and bulk expand controls. Number sections only when order is part of the information, and put the number in the heading text rather than a separate label.
 
 ## Output
 
