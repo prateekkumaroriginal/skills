@@ -23,6 +23,10 @@ Imagine opening a card from a grid. Expanding the card in place shows where the 
 
 ## Focus/emphasis
 
-Focus is what you want the viewer to notice at a given moment. Animation can draw attention to something inside a scene. A transition can carry that attention into the next scene. Ask "Where on screen should the viewer be looking right now?"
+Focus is what you want the viewer to notice at a given moment. Animation can draw attention to something inside a scene. A transition can carry that attention into the next scene. Ponder the question "Where on screen should the viewer be looking right now?"
 
 Three steps are visible side by side. As the narration explains each step, brighten that step and leave the other two visible so the viewer can still see where it fits in the sequence.
+
+- **Zoom into a detail.** Show a full calendar. As the narrator says "these two days overlap," zoom into the two entries and stop with both dates readable. The viewer sees where to look and why those entries belong together.
+- **Reveal content progressively.** Show a chart up to the day of a policy change. As the narrator explains what happened afterward, reveal the rest of the line from left to right. Attention follows the newly exposed edge, while the earlier trend stays visible for comparison.
+- **Build from a blank screen.** Start empty. On "a request arrives," one request appears. On "it waits," a queue forms around it. On "a worker picks it up," the worker appears and the request moves toward it. The viewer learns where to look as each part becomes relevant.
