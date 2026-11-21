@@ -25,4 +25,4 @@ Imagine opening a card from a grid. Expanding the card in place shows where the 
 
 Focus is what you want the viewer to notice at a given moment. Animation can draw attention to something inside a scene. A transition can carry that attention into the next scene. Ask "Where on screen should the viewer be looking right now?"
 
-On a route map, brighten the whole route when the viewer needs to see where it goes. When they need to know where to change trains, highlight the transfer station and keep both connecting lines visible. The station draws attention, and the lines explain why it matters.
+Three steps are visible side by side. As the narration explains each step, brighten that step and leave the other two visible so the viewer can still see where it fits in the sequence.
