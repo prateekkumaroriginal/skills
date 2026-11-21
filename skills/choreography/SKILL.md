@@ -21,4 +21,6 @@ Choose a transition by thinking about how the next scene relates to the one the 
 
 Imagine opening a card from a grid. Expanding the card in place shows where the detail came from. Sliding the grid aside makes the detail feel like the next page. Cutting straight to the detail gives the viewer the answer immediately. All three reach the same destination, but each tells the viewer something different about how they got there.
 
-## Focus/attention
+## Emphasis
+
+Focus is what you want the viewer to notice at a given moment. Animation can draw attention to something inside a scene. A transition can carry that attention into the next scene.
