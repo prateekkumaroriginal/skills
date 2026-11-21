@@ -25,4 +25,6 @@ Imagine opening a card from a grid. Expanding the card in place shows where the 
 
 Focus is what you want the viewer to notice at a given moment. Animation can draw attention to something inside a scene. A transition can carry that attention into the next scene.
 
+As each line is spoken, ask "Where on screen should the viewer be looking right now?" When the narrator explains how many tasks a plan covers, grow that plan's bar so the viewer follows its advancing edge. When the narrator compares costs per task, zoom in on the model being named. Shift the zoom to the next model when the narration moves to it.
+
 On a route map, brighten the whole route when the viewer needs to see where it goes. When they need to know where to change trains, highlight the transfer station and keep both connecting lines visible. The station draws attention, and the lines explain why it matters.
