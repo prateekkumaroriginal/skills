@@ -5,4 +5,4 @@
 - `rf-loop`: Creates a PR, addresses worthwhile review findings for up to three rounds, and merges when clear. Invoke explicitly with `$rf-loop`.
 - `slime-fill-rule`: Writes and validates importable rule JSON for the Slime form-fill Chrome extension, including custom dropdowns, radios and checkboxes.
 - `voice-over`: Generate natural sounding voice.
-- `choreography`: An animation and transition guide.
+- `choreography`: A guide for choosing animations and transitions.

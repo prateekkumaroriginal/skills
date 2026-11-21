@@ -1,6 +1,12 @@
 ---
 name: choreography
-description: An animation and transition guide.
+description: A guide for choosing animations and transitions.
 ---
 
-An animation and transition guide.
+A guide for choosing animations and transitions.
+
+## Animations
+
+## Transitions
+
+## Focus/attention
