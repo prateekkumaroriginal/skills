@@ -25,7 +25,7 @@ Imagine opening a card from a grid. Expanding the card in place shows where the 
 
 Focus is what you want the viewer to notice at a given moment. Animation can draw attention to something inside a scene. A transition can carry that attention into the next scene. Ponder the question "Where on screen should the viewer be looking right now?"
 
-The following examples are just a means to an end. Each illustrates a way to direct attention. Choose whatever fits your scene.
+The following examples are just a means to an end, nothing specific.
 
 - **Zoom into a detail.** Show a full calendar. As the narrator says "these two days overlap," zoom into the two entries and stop with both dates readable. The viewer sees where to look and why those entries belong together.
 - **Reveal content progressively.** Show a chart up to the day of a policy change. As the narrator explains what happened afterward, reveal the rest of the line from left to right. Attention follows the newly exposed edge, while the earlier trend stays visible for comparison.
