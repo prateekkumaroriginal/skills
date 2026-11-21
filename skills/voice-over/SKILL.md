@@ -1,5 +1,5 @@
 ---
-name: voiveocer
+name: voice-over
 description: Generate natural-sounding video narration from a script with local Qwen3-TTS CustomVoice. Use for a new voiceover, a passage retake, or a new narrator reading the same script.
 ---
 
