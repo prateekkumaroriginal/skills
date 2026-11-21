@@ -15,9 +15,9 @@ Here's an example of deciding an appropriate animation. Here the `dot` is just a
 ## Transitions
 
 A transition controls how the viewer gets from one shot, scene, or state to the next.
-The same circle expanding to uncover the next scene is doing the job of a transition.
+A circle expanding to uncover the next scene is doing the job of a transition.
 
-Choose a transition by thinking about how the next scene relates to the one the viewer just saw. The `card` and `grid` are just a means to an end. Nothing specific.
+Choose a transition by thinking about how the next scene relates to the one the viewer just saw. The `card` and `grid` are just a means to an end, nothing specific.
 
 Imagine opening a card from a grid. Expanding the card in place shows where the detail came from. Sliding the grid aside makes the detail feel like the next page. Cutting straight to the detail gives the viewer the answer immediately. All three reach the same destination, but each tells the viewer something different about how they got there.
 
