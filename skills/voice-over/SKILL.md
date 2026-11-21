@@ -5,17 +5,13 @@ description: Generate natural-sounding video narration from a script with local 
 
 ## Direct the read
 
-Use the listener the user identified. If they haven't identified one, ask "Who is the narrator speaking to?" and wait for the answer before generating narration. Use that answer in the direction given to the model. A listener can be one person or a specific audience.
-
-For a conversational explainer, adapt this direction to the brief and pass it through `--instructions` on every take:
-
-> You're explaining this to [the listener the user named]. Speak in your own conversational voice. Carry the thought across sentences. Give the main point a little emphasis.
+If the user hasn't described the narration style, ask "How do you want the narration to sound?" Pass their description to `--instructions` for each take.
 
 ## Record in passages
 
 Use Qwen3-TTS 1.7B CustomVoice with the requested voice and language. For installation, voice names, device selection, and the synthesis command, see [setup](references/setup.md).
 
-Group the script into passages of 2-4 connected sentences, aiming for about 15 seconds per take. Keep a thought and its payoff together. Pass the whole passage in one text argument so the model can phrase the sentences together. Preserve the script's wording and meaning when spelling out a number for speech.
+Group the script into passages of 2-4 connected sentences, aiming for about 15 seconds per take. Keep a thought and its payoff together. Pass the whole passage in one text argument so the model can phrase the sentences together.
 
 Give each passage a distinct seed. Save each raw WAV with its passage number and seed, such as `take-03-seed-103.wav`. If a reading sounds stiff or a word is wrong, generate that passage again with a fresh seed and a new filename. Assemble from the selected WAVs.
 
@@ -25,7 +21,7 @@ Transcribe each selected WAV with a speech recognizer for the narration language
 
 ## Finish the audio
 
-Join the selected WAVs in script order. Leave 0.2-0.6 seconds of silence between passages, counting silence already present at the edges. Use the shorter pause for a continuing thought and the longer pause for a change of subject. Apply the filter to the joined narration, then encode once:
+Join the selected WAVs in script order. Leave 0.2-0.6 seconds of silence between passages, counting silence already present at the edges. Use the shorter pause for a continuing thought and the longer pause for a change of subject. Run FFmpeg once on the joined track to reduce low-frequency rumble, normalize loudness across the narration, and export the AAC file.
 
 ```sh
 ffmpeg -i joined.wav -af "highpass=f=45,loudnorm=I=-16:TP=-1.5:LRA=9" -c:a aac -b:a 192k -ar 48000 narration.m4a

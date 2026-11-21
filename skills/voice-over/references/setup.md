@@ -30,10 +30,10 @@ Run this one-sentence setup test in a writable directory. Substitute the selecte
 speech tts qwen3-tts-1.7b:q5_k --device cpu --threads 4 --language en --voice ryan --seed 72 -o setup-test.wav "You can hear my voice clearly from the beginning of this sentence to the end."
 ```
 
-For a production take, supply the selected language and voice, the direction with the user's listener filled in, and the full passage as one argument. Replace the uppercase placeholders:
+For a production take, supply the selected language and voice, the user's narration style, and the full passage as one argument.
 
 ```sh
-speech tts qwen3-tts-1.7b:q5_k --device auto --language LANGUAGE --voice VOICE --instructions "LISTENER-SPECIFIC DIRECTION" --seed 103 -o take-03-seed-103.wav "FULL PASSAGE"
+speech tts qwen3-tts-1.7b:q5_k --device auto --language LANGUAGE --voice VOICE --instructions "NARRATION STYLE" --seed 103 -o take-03-seed-103.wav "FULL PASSAGE"
 ```
 
 For the English transcript check on this project, the recognizer was faster-whisper with the `base.en` model on CPU using `int8`. To reproduce it, install `faster-whisper` in a Python environment and use `WhisperModel("base.en", device="cpu", compute_type="int8")`. Call `transcribe` on each WAV with `language="en"` and read the returned segments. For other languages use a multilingual recognizer. [faster-whisper usage](https://github.com/SYSTRAN/faster-whisper#usage)
