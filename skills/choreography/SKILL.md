@@ -10,7 +10,7 @@ A guide for choosing animations and transitions.
 Animation controls how something behaves over time.
 A circle expanding to show a growing radius is an animation.
 
-A dot can pulse to draw your eye, move to show where it's heading, or leave a trail to show where it's been.
+Let what you want the viewer to notice or understand guide your choice of motion. On a map, a pulsing dot draws attention to a location, a moving dot shows the direction of travel, and the trail it leaves shows the route already taken.
 
 ## Transitions
 
