@@ -1,6 +1,6 @@
 ---
 name: choreography
-description: A guide for choosing animations and transitions.
+description: Use when creating or revising a motion-graphic video and deciding what should move, how scenes should transition, or where to direct the viewer's attention.
 ---
 
 Choreography is the art of arranging, moving, and transforming on-screen elements so each moment feels right. Animation, transitions, and focus are central to it. They shape how elements move, how one scene flows into the next, and where the viewer’s attention goes. Let the moment set the pace and intensity. A small change might call for a gentle shift, a surprise for a sharp cut, and a detail worth reading for a moment of stillness.
