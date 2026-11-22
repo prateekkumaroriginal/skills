@@ -52,7 +52,7 @@ Run every transition as a **relay**: one element carries attention across. The o
 Ask: where on screen should the viewer be looking right now? Then make that the only answer. Use at least one of these on every beat, and stack them for the key moments:
 
 - **Camera**: zoom or pan toward the focal element. Show a full calendar; on "these two days overlap," zoom until both entries fill the frame and stay readable.
-- **Dim the rest**: lower everything not in play to about 35% opacity or desaturate it, and bring it back afterwards.
+- **Dim the rest**: lower everything the viewer has already met but that isn't in play to about 35% opacity or desaturate it, and bring it back afterwards. A new element makes its entrance on its keyword (see build from blank), so it never sits dimmed on screen before it is named.
 - **Scale**: the active element grows slightly (around 1.1×) while it speaks.
 - **Progressive reveal**: show a chart up to a policy change; as the narrator explains what happened next, reveal the rest of the line left to right. Attention follows the new edge.
 - **Build from blank**: on "a request arrives," one request appears; on "it waits," a queue forms; on "a worker picks it up," the worker appears and the request moves to it.
@@ -71,6 +71,7 @@ Score **Animation**, **Transition**, **Focus** and **Choreography** separately o
 - At each transition, which element carries attention, and how many semi-transparent layers overlap at the worst frame?
 - Where does the camera move? A video with no zoom or pan anywhere needs a reason.
 - At each beat, is there one obvious place to look? Note every frame where a moving object touches a title or label.
+- Does every element first appear with an entrance on its own keyword? Note every element that is on screen, dimmed, before the narration names it.
 - Where is the climax, and is it staged differently from the routine beats?
 
 Brief the reviewer with the video and this rubric only, not the list of recent fixes, so it judges the cut fresh.
