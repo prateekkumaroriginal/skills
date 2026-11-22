@@ -32,7 +32,9 @@ A single fade-and-slide helper applied to everything is the signature of a flat 
 
 ## Transitions
 
-Choose a transition from how the next scene relates to the current one. Opening a card from a grid: expanding the card in place shows where the detail came from, sliding the grid aside makes the detail feel like the next page, and cutting straight to it gives the answer immediately. Same destination, different story.
+No jump cuts allowed.
+
+Choose a transition from how the next scene relates to the current one. Opening a card from a grid: expanding the card in place shows where the detail came from, sliding the grid aside makes the detail feel like the next page, and snapping it forward with a quick zoom gives the answer immediately. Same destination, different story.
 
 | Relationship | Transition |
 |---|---|
@@ -41,7 +43,7 @@ Choose a transition from how the next scene relates to the current one. Opening 
 | Next step in a sequence | Pan or slide in the direction of progress |
 | Same objects, new arrangement | Shared elements move to their new places |
 | Return to an earlier idea | Reverse of how you left it |
-| Deliberate contrast or surprise | Hard cut |
+| Deliberate contrast or surprise | A fast, sharp move such as a snap zoom or whip pan |
 
 Run every transition as a **relay**: one element carries attention across. The outgoing material leaves first, then the carried element moves, then new material arrives. Keep the overlap short (about 100 ms) so at most two layers are ever semi-transparent at once. Titles change after the scene settles, not as the transition itself.
 
