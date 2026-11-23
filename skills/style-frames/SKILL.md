@@ -7,7 +7,7 @@ description: Use before animating a motion-graphic video, to show the user style
 
 **Style frames** are finished-looking stills of the video's elements and key moments. **Motion tests** are short clips of those same elements moving. Together they let the user approve how the video looks and moves before any scene is animated, so feedback on the look arrives before the first cut instead of after it.
 
-Render both with the same renderer and assets the video will use, at the video's resolution, so what the user approves is what the cuts will show.
+Render both with the same renderer and assets the video will use, at the video's resolution, so what the user approves is what the cuts will show. In a `director` project that is the kit in `src/`: stills with `render.mjs --stills`, motion tests as their own page with `--page`.
 
 Inputs: `brief.md` and the confirmed `script.md`. Outputs go in the project folder:
 

@@ -20,12 +20,12 @@ style/            style frames and motion tests
 audio/            takes, narration.m4a, timing.json (word timings)
 beat-sheet.md     from the choreography skill
 assets/           images and fonts used by the renderer
-src/              renderer code
+src/              renderer: a copy of this skill's kit/ plus the video's scenes
 cuts/             cut-01.mp4, cut-02.mp4, ...
 cuts.md           one entry per cut: what changed, why, review scores
 ```
 
-The renderer reads fonts and images only from `assets/`, never from OS font folders or absolute paths.
+The renderer reads fonts and images only from `assets/`, never from OS font folders or absolute paths. Start `src/` by copying this skill's [`kit/`](kit/README.md) into it; its README holds the page contract, the commands and the Motion gotchas.
 
 ## Steps
 
@@ -69,7 +69,7 @@ Load the `choreography` skill and write `beat-sheet.md` from the script's scenes
 
 ### 6. Animate and render
 
-Build the renderer in `src/` from the beat sheet, with every element drawn as approved in `style.md`. Draw at output resolution with vector shapes and type, and use source images at least as large as they appear on screen. Render each version to a new numbered file in `cuts/` and add its entry to `cuts.md`. Earlier cuts stay untouched.
+Write the scenes into `src/index.html` from the beat sheet, as one Motion sequence pinned to keyword times, with every element drawn as approved in `style.md`. Draw at output resolution with vector shapes and type, and use source images at least as large as they appear on screen. Render each version to a new numbered file in `cuts/` and add its entry to `cuts.md`. Earlier cuts stay untouched.
 
 ### 7. Review
 

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+  The video's page. render.mjs calls build() once, then render(t) for every frame.
+  Everything that moves is one paused Motion sequence; render(t) seeks it, so any frame can be drawn in any order.
+  Replace the font faces and the stage content with this video's own; keep build()/render(t).
+-->
+<style>
+  /* Fonts come only from assets/fonts. One @font-face per weight used. */
+  @font-face { font-family: Body; font-weight: 500; src: url(../assets/fonts/REPLACE-500.woff2); }
+  @font-face { font-family: Body; font-weight: 700; src: url(../assets/fonts/REPLACE-700.woff2); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0B1020; font-family: Body; }
+  #stage { position: absolute; inset: 0; overflow: hidden; }
+  /* the camera moves #world: x, y and scale around its top-left corner */
+  #world { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+  .abs { position: absolute; }
+  .ico { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="world">
+    <!-- Elements, each with a stable id. Position with left/top/margins, never a CSS transform (Motion owns transform). -->
+    <!-- Icons: <i data-icon="lock"></i>, filled from icons.js at build time. -->
+  </div>
+</div>
+<script src="icons.js"></script>
+<script src="node_modules/motion/dist/motion.js"></script>
+<script>
+const { animate, motionValue } = Motion;
+const $ = id => document.getElementById(id);
+
+// Start time (s) of the nth occurrence of a word in a narration passage, from audio/timing.json.
+function K(p, w, n = 1) {
+  const hits = TIMING.words.filter(x => x.p === p && x.w === w);
+  if (!hits[n - 1]) throw new Error(`keyword ${p}:${w}#${n} not found`);
+  return hits[n - 1].s;
+}
+
+const seq = [];
+// One segment of the sequence: keyframes for an element, starting at absolute time t (seconds).
+const at = (el, kf, t, o = {}) => seq.push([el, kf, { at: t, duration: 0.4, ease: 'easeInOut', ...o }]);
+// Entrance: grow from 0.82x with a slight overshoot.
+const pop = (el, t, d = 0.4) => at(el, { opacity: [0, 1], scale: [0.82, 1] }, t, { duration: d, ease: 'backOut' });
+// Emphasis: brief scale pulse and back.
+const pulse = (el, t, a = 0.06) => at(el, { scale: [1, 1 + a, 1] }, t, { duration: 0.28, ease: 'easeOut' });
+// Camera: centre the view on (cx, cy) at zoom z.
+const cam = (t, d, cx, cy, z) => at($('world'), { x: 960 - cx * z, y: 540 - cy * z, scale: z }, t, { duration: d });
+// Typewriter: a motion value counts characters and writes them into el.
+const typed = (el, str, t, d) => {
+  const n = motionValue(0);
+  n.on('change', v => { el.textContent = str.slice(0, Math.round(v)); el.style.visibility = v < 0.5 ? 'hidden' : 'visible'; });
+  el.style.visibility = 'hidden';
+  seq.push([n, str.length, { at: t, duration: d, ease: 'linear' }]);
+};
+
+let controls;
+function build() {
+  for (const el of document.querySelectorAll('[data-icon]'))
+    el.outerHTML = `<svg class="ico" viewBox="0 0 24 24">${ICONS[el.dataset.icon]}</svg>`;
+
+  // Scenes go here, in time order. Example:
+  //   pop($('model'), K(1, 'language'));
+  //   cam(K(1, 'language') - 0.2, 0.9, 960, 540, 1);
+
+  controls = animate(seq);
+  controls.pause();
+}
+
+function render(t) { if (controls) controls.time = Math.min(t, controls.duration); }
+</script>
+</body>
+</html>
