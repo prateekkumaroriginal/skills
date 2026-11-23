@@ -6,3 +6,4 @@
 - `slime-fill-rule`: Writes and validates importable rule JSON for the Slime form-fill Chrome extension, including custom dropdowns, radios and checkboxes.
 - `voice-over`: Generate natural sounding voice.
 - `choreography`: A guide for choosing animations and transitions.
+- `style-frames`: Shows the user style frames and motion tests of every element a video will use, and gets the look and motion approved before animation.
