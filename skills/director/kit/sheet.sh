@@ -1,13 +1,14 @@
 #!/bin/bash
 # Contact sheet of stills, sized to what a model actually sees (1568 px wide), each labelled with its time.
 #   src/sheet.sh OUTDIR t1,t2,... [COLUMNS=3]   -> OUTDIR/t*.png (full size) and OUTDIR/sheet.jpg
+#   RENDER=canvas/render.mjs src/sheet.sh ...   (stills from the canvas renderer)
 # For fine detail (small text, overlaps), look at a full-size crop instead of the sheet:
 #   ffmpeg -i OUTDIR/t0012.50.png -vf crop=W:H:X:Y crop.png
 set -e
 OUT=$(realpath -m "$1"); COLS=${3:-3}
 cd "$(dirname "$0")"
 FONT=$(ls ../assets/fonts/*.woff2 ../assets/fonts/*.ttf 2>/dev/null | head -1 || true)
-node render.mjs "$OUT" --stills "$2"
+node "${RENDER:-render.mjs}" "$OUT" --stills "$2"
 cd "$OUT"
 W=$(( 1568 / COLS )); H=$(( W * 9 / 16 ))
 for f in t*.png; do

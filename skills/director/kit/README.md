@@ -9,6 +9,7 @@ Copy this folder to the project's `src/`, then run `npm install` there. If Playw
 | `sheet.sh` | Builds a contact sheet of stills, 1568 px wide and labelled with times. |
 | `beats.py` | Fills keyword times from `timing.json` into `beat-sheet.template.md` and writes `beat-sheet.md`. |
 | `build_icons.mjs` | Bundles the SVG icons in `assets/icons/` into `icons.js`. |
+| `canvas/` | A browser-free renderer, 5–8× faster, for videos whose scenes are drawn in code instead of HTML. See [`canvas/README.md`](canvas/README.md). |
 
 ## The page contract
 
