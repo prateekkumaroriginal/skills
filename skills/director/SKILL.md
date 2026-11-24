@@ -80,11 +80,11 @@ Give a fresh reviewer only the cut, `brief.md`, `style.md` with its frames and t
 - **Clarity**: would the audience in `brief.md` reach the goal from this video alone?
 - **Sync**: does every visual land on its narration keyword?
 
-Each criterion gets a score out of 10 with timestamped evidence. Record the scores in `cuts.md`, fix what the review found, render the next cut, and review again. Stop when every score meets the bar the user set, or when the user stops the loop.
+Each criterion gets a score out of 10 with timestamped evidence. Record the scores in `cuts.md`, fix what the review found and render the next cut. Do not review that cut again: run at most one review between one showing to the user and the next, then go to step 8.
 
 ### 8. Deliver
 
-Report the final cut's path and duration, its review scores, the sources and anything left unresolved.
+Show the user the fixed cut. Report its path and duration, the review scores, what was fixed after the review, the sources and anything left unresolved. If the user asks for changes, route them as in Feedback, render a new cut and review it once more before showing it.
 
 ## Feedback
 
