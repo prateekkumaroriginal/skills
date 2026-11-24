@@ -25,7 +25,7 @@ cuts/             cut-01.mp4, cut-02.mp4, ...
 cuts.md           one entry per cut: what changed, why, review scores
 ```
 
-The renderer reads fonts and images only from `assets/`, never from OS font folders or absolute paths. Start `src/` by copying this skill's [`kit/`](kit/README.md) into it; its README holds the page contract, the commands and the Motion gotchas.
+The renderer reads fonts and images only from `assets/`, never from OS font folders or absolute paths. Start `src/` by copying this skill's [`kit/`](kit/README.md) into it; its README holds the scene contract, the commands and the Motion gotchas.
 
 ## Steps
 
@@ -75,7 +75,7 @@ Load the `choreography` skill and write `beat-sheet.md` from the script's scenes
 
 ### 7. Animate and render
 
-Write the scenes into `src/index.html` from the beat sheet, as one Motion sequence pinned to keyword times, with every element drawn as approved in `style.md`. When the user asks for fast renders, write them into `src/canvas/scene.mjs` for the canvas renderer instead ([`kit/canvas/README.md`](kit/canvas/README.md)); choose before the first cut, since porting HTML scenes later costs a rewrite. Draw at output resolution with vector shapes and type, and use source images at least as large as they appear on screen. Render each version to a new numbered file in `cuts/` and add its entry to `cuts.md`. Earlier cuts stay untouched.
+Write the scenes into `src/scene.mjs` from the beat sheet, as one Motion sequence pinned to keyword times, with every element drawn as approved in `style.md`. Draw at output resolution with vector shapes and type, and use source images at least as large as they appear on screen. Render each version to a new numbered file in `cuts/` and add its entry to `cuts.md`. Earlier cuts stay untouched.
 
 ### 8. Review
 

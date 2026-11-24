@@ -1,134 +1,132 @@
-// Render the page in headless Chromium frame by frame and encode with the narration.
-//   node src/render.mjs cuts/cut-01.mp4 [--from 0] [--to 10] [--fps 30] [--page index.html] [--workers N]
+// Render the scenes and encode them with the narration.
+//   node src/render.mjs cuts/cut-01.mp4 [--from 0] [--to 10] [--fps 30] [--workers N] [--preset ultrafast] [--crf 16]
 //   node src/render.mjs OUTDIR --stills 1.5,3,7.25          (full-size PNGs, one per time)
-// The page must define build() (lay out everything once) and render(t) (show time t in seconds).
-// audio/timing.json is exposed to the page as window.TIMING.
-import { chromium } from 'playwright-core';
+//   [--scene scene.mjs]  scene module in src/, e.g. motion-tests.mjs
+// Without audio/narration.m4a (look frame, style frames, motion tests) the video gets a silent track;
+// without audio/timing.json, --to defaults to the end of the last animation.
+// Worker threads seek the timeline, draw each frame with Skia and convert it to yuv420p; the main thread feeds the
+// frames in order to one x264 process. A frame where no value changes since the previous one repeats it.
+import { Worker, isMainThread, parentPort, workerData } from 'node:worker_threads';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-import path from 'node:path';
 import os from 'node:os';
-import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(HERE, '..');
-const args = process.argv.slice(2);
-const opt = (k, d) => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : d; };
-const out = path.resolve(args[0]);
-const fps = Number(opt('fps', 30));
-const timing = JSON.parse(fs.readFileSync(path.join(ROOT, 'audio/timing.json'), 'utf8'));
-const from = Number(opt('from', 0));
-const to = Number(opt('to', timing.duration));
-const stills = opt('stills', null);
+const SRC = HERE, ROOT = path.resolve(HERE, '..');
+const Wd = 1920, Ht = 1080;
 
-// Chromium from Playwright's cache; install it once with `npx playwright-core install chromium`.
-const cache = path.join(os.homedir(), '.cache/ms-playwright');
-const exe = (fs.existsSync(cache) ? fs.readdirSync(cache) : [])
-  .filter(d => d.startsWith('chromium-')).sort().reverse()
-  .flatMap(d => ['chrome-linux64/chrome', 'chrome-linux/chrome', 'chrome-mac/Chromium.app/Contents/MacOS/Chromium',
-    'chrome-mac-arm64/Chromium.app/Contents/MacOS/Chromium', 'chrome-win/chrome.exe', 'chrome-win64/chrome.exe'].map(p => path.join(cache, d, p)))
-  .find(fs.existsSync);
-// One headless Chromium with the page built and ready to seek. Video renders run several in parallel.
-async function openPage() {
-  const browser = await chromium.launch({
-    ...(exe ? { executablePath: exe } : {}),
-    args: ['--allow-file-access-from-files', '--font-render-hinting=none'],
-  });
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
-  page.on('pageerror', e => { console.error('PAGE ERROR', e.message); process.exit(1); });
-  page.on('console', m => { if (m.type() === 'error') console.error('console:', m.text()); });
-  await page.addInitScript(t => { window.TIMING = t; }, timing);
-  await page.goto('file://' + path.join(HERE, opt('page', 'index.html')));
-  // load every @font-face before laying out, so text measures the same on every machine
-  await page.evaluate(async () => {
-    await Promise.all([...document.fonts].map(f => f.load().catch(() => { throw new Error('font failed: ' + f.family + ' ' + f.weight); })));
-    await document.fonts.ready;
-    build();
-  });
-  // CDP's capture with optimizeForSpeed is about 3x faster than page.screenshot(). Stills are lossless PNG;
-  // video frames are JPEG q95, which after the H.264 encode is indistinguishable from PNG and about 30% faster.
-  const cdp = await page.context().newCDPSession(page);
-  const shot = async (t, format = 'png') => {
-    await page.evaluate(tt => render(tt), t);
-    const { data } = await cdp.send('Page.captureScreenshot', { format, optimizeForSpeed: true, ...(format === 'jpeg' ? { quality: 95 } : {}) });
-    return Buffer.from(data, 'base64');
-  };
-  // [start, end] in seconds of every animation segment, or null if the page doesn't expose window.SEQ
-  // or a segment's timing can't be read, in which case every frame is captured.
-  const spans = await page.evaluate(() => {
-    if (!Array.isArray(window.SEQ)) return null;
-    const out = [];
-    for (const s of SEQ) {
-      const o = s[2] || {};
-      if (typeof o.at !== 'number' || o.repeatDelay || (o.repeat && !Number.isFinite(o.repeat))) return null;
-      const start = o.at + (o.delay || 0);
-      out.push([start, start + (o.duration ?? 0.3) * ((o.repeat || 0) + 1)]);
+async function load(sceneRel) {
+  const { createCanvas } = await import('@napi-rs/canvas');
+  const { timeline } = await import('./timeline.mjs');
+  const { build } = await import(pathToFileURL(path.resolve(SRC, sceneRel)).href);
+  const { seq, draw } = build(); const tl = timeline(seq);
+  const cv = createCanvas(Wd, Ht);
+  return { tl, cv, ctx: cv.getContext('2d'), draw };
+}
+
+if (!isMainThread) {
+  const { tl, cv, ctx, draw } = await load(workerData.scene);
+  // RGBA -> yuv420p, BT.601 limited range (what ffmpeg produces from RGB by default), chroma from 2x2 averages;
+  // one pass over row pairs with 32-bit reads (little-endian RGBA). Doing it here spreads it over the workers.
+  function toI420(px) {
+    if (px.byteOffset % 4) px = new Uint8Array(px);
+    const u = new Uint32Array(px.buffer, px.byteOffset, Wd * Ht);
+    const ab = new ArrayBuffer(Wd * Ht * 3 / 2), Y = new Uint8Array(ab, 0, Wd * Ht), U = new Uint8Array(ab, Wd * Ht, Wd * Ht / 4), V = new Uint8Array(ab, Wd * Ht * 5 / 4, Wd * Ht / 4);
+    let c = 0;
+    for (let y = 0; y < Ht; y += 2) {
+      let i = y * Wd; const end = i + Wd;
+      for (; i < end; i += 2, c++) {
+        const p0 = u[i], p1 = u[i + 1], p2 = u[i + Wd], p3 = u[i + Wd + 1];
+        const r0 = p0 & 255, g0 = (p0 >> 8) & 255, b0 = (p0 >> 16) & 255;
+        const r1 = p1 & 255, g1 = (p1 >> 8) & 255, b1 = (p1 >> 16) & 255;
+        const r2 = p2 & 255, g2 = (p2 >> 8) & 255, b2 = (p2 >> 16) & 255;
+        const r3 = p3 & 255, g3 = (p3 >> 8) & 255, b3 = (p3 >> 16) & 255;
+        Y[i] = ((66 * r0 + 129 * g0 + 25 * b0 + 128) >> 8) + 16;
+        Y[i + 1] = ((66 * r1 + 129 * g1 + 25 * b1 + 128) >> 8) + 16;
+        Y[i + Wd] = ((66 * r2 + 129 * g2 + 25 * b2 + 128) >> 8) + 16;
+        Y[i + Wd + 1] = ((66 * r3 + 129 * g3 + 25 * b3 + 128) >> 8) + 16;
+        const R = r0 + r1 + r2 + r3, G = g0 + g1 + g2 + g3, B = b0 + b1 + b2 + b3;
+        U[c] = ((-38 * R - 74 * G + 112 * B + 512) >> 10) + 128; V[c] = ((112 * R - 94 * G - 18 * B + 512) >> 10) + 128;
+      }
     }
-    return out;
+    return ab;
+  }
+  parentPort.on('message', ({ i, t }) => {
+    tl.seek(t); draw(ctx, t);
+    const ab = toI420(cv.data());
+    parentPort.postMessage({ i, ab }, [ab]);
   });
-  return { browser, shot, spans };
-}
+} else {
+  const args = process.argv.slice(2);
+  const opt = (k, d) => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : d; };
+  const out = path.resolve(args[0]);
+  const scene = opt('scene', 'scene.mjs');
+  const fps = Number(opt('fps', 30));
+  const timingFile = path.join(ROOT, 'audio/timing.json');
+  const timing = fs.existsSync(timingFile) ? JSON.parse(fs.readFileSync(timingFile, 'utf8')) : null;
+  const t0 = performance.now();
 
-if (stills) {
-  fs.mkdirSync(out, { recursive: true });
-  const { browser, shot } = await openPage();
-  for (const t of stills.split(',').map(Number))
-    fs.writeFileSync(path.join(out, `t${t.toFixed(2).padStart(7, '0')}.png`), await shot(t));
-  await browser.close();
-  process.exit(0);
-}
+  if (opt('stills', null)) {
+    const { tl, cv, ctx, draw } = await load(scene);
+    fs.mkdirSync(out, { recursive: true });
+    for (const t of opt('stills').split(',').map(Number)) {
+      tl.seek(t); draw(ctx, t);
+      fs.writeFileSync(path.join(out, `t${t.toFixed(2).padStart(7, '0')}.png`), cv.toBuffer('image/png'));
+    }
+    process.exit(0);
+  }
 
-// Every frame depends only on its time, so the frames are split into one contiguous run per worker.
-// Each worker encodes its run to a segment; the segments are joined without re-encoding and muxed with the narration.
-// Output goes to a .part file renamed at the end, so an interrupted render never looks like a finished cut.
-const part = out.replace(/(\.\w+)$/, '.part$1');
-const segDir = part + '.segs';
-fs.rmSync(segDir, { recursive: true, force: true });
-fs.mkdirSync(segDir, { recursive: true });
-const audio = path.join(ROOT, 'audio/narration.m4a');
-const n = Math.round((to - from) * fps);
-const workers = Math.max(1, Math.min(Number(opt('workers', Math.min(8, Math.floor(os.cpus().length / 2)))), Math.ceil(n / fps)));
-const run = (cmd, a) => new Promise((res, rej) => {
-  const p = spawn(cmd, a, { stdio: ['pipe', 'inherit', 'inherit'] });
-  p.on('close', c => c === 0 ? res() : rej(new Error(cmd + ' exited ' + c)));
-  return p;
-});
-const t0 = Date.now();
-let done = 0, held = 0;
-const progress = setInterval(() => console.log(`frame ${done}/${n}  ${((Date.now() - t0) / 1000).toFixed(0)}s`), 5000);
-async function worker(w) {
-  const a = Math.floor(n * w / workers), b = Math.floor(n * (w + 1) / workers);
-  const { browser, shot, spans } = await openPage();
-  // A frame where no segment is running since the previous frame is identical to it, so reuse that capture.
-  const moves = i => !spans || spans.some(([s0, s1]) => s0 < from + i / fps && s1 > from + (i - 1) / fps);
-  const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
-    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '16', '-pix_fmt', 'yuv420p', '-tune', 'animation', '-threads', '2',
-    path.join(segDir, `seg${String(w).padStart(3, '0')}.mp4`)], { stdio: ['pipe', 'inherit', 'inherit'] });
+  const { tl } = await load(scene);
+  const from = Number(opt('from', 0)), to = Number(opt('to', timing?.duration || tl.duration));
+  const n = Math.round((to - from) * fps);
+  // frames where something changes since the previous frame; the rest repeat it
+  const moving = [], movingSet = new Set();
+  for (let i = 0; i < n; i++) {
+    const t = from + i / fps;
+    if (i === 0 || tl.spans.some(([a, b]) => a <= t && b > t - 1 / fps)) { moving.push(i); movingSet.add(i); }
+  }
+  // Workers: the CPU's threads minus four (x264, the main thread and the system); a few more or fewer can be faster.
+  const W = Number(opt('workers', Math.max(1, Math.min(8, os.cpus().length - 4))));
+  // Write to a .part file and rename at the end, so an interrupted render never looks like a finished cut.
+  const part = out.replace(/(\.\w+)$/, '.part$1');
+  const audio = path.join(ROOT, 'audio/narration.m4a');
+  const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'yuv420p', '-s', `${Wd}x${Ht}`, '-r', String(fps), '-i', '-',
+    ...(fs.existsSync(audio) ? [...(from > 0 ? ['-ss', String(from)] : []), '-i', audio] : ['-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo']),
+    '-map', '0:v', '-map', '1:a',
+    // ultrafast keeps x264 ahead of the workers. At crf 16 it looks the same as slower presets (SSIM 0.999 to a
+    // lossless encode for both ultrafast and medium); its files are about twice the size.
+    '-c:v', 'libx264', '-preset', opt('preset', 'ultrafast'), '-crf', opt('crf', '16'), '-tune', 'animation',
+    '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', part], { stdio: ['pipe', 'inherit', 'inherit'] });
   const closed = new Promise(r => ff.on('close', r));
-  let buf;
-  for (let i = a; i < b; i++) {
-    if (i === a || moves(i)) buf = await shot(from + i / fps, 'jpeg'); else held++;
-    if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
-    done++;
+  const write = buf => ff.stdin.write(buf) ? null : new Promise(r => ff.stdin.once('drain', r));
+
+  const ready = new Map(); let next = 0, prev = null, mi = 0, inflight = 0, held = 0, lastLog = t0;
+  const workers = [...Array(W)].map(() => new Worker(new URL(import.meta.url), { workerData: { scene } }));
+  let wake; const woken = () => new Promise(r => { wake = r; });
+  const dispatch = w => {
+    if (mi >= moving.length || inflight >= W * 3) return;
+    const i = moving[mi++]; inflight++; w.postMessage({ i, t: from + i / fps });
+  };
+  for (const w of workers) {
+    w.on('message', ({ i, ab }) => { inflight--; ready.set(i, Buffer.from(ab)); dispatch(w); wake?.(); });
+    w.on('error', e => { console.error(e); process.exit(1); });
+    dispatch(w); dispatch(w);
+  }
+  while (next < n) {
+    if (ready.has(next)) { prev = ready.get(next); ready.delete(next); }
+    else if (prev && !movingSet.has(next)) held++;
+    else { await woken(); for (const w of workers) dispatch(w); continue; }
+    const p = write(prev); if (p) await p;
+    next++;
+    if (performance.now() - lastLog > 5000) { lastLog = performance.now(); console.log(`frame ${next}/${n}  ${((lastLog - t0) / 1000).toFixed(0)}s`); }
   }
   ff.stdin.end();
   const code = await closed;
-  await browser.close();
-  if (code !== 0) throw new Error(`ffmpeg failed on segment ${w}`);
+  for (const w of workers) w.terminate();
+  if (code !== 0) { console.error('ffmpeg failed; partial file left at', part); process.exit(1); }
+  fs.renameSync(part, out);
+  const s = (performance.now() - t0) / 1000;
+  console.log(`wrote ${out} (${n} frames, ${held} reused holds, ${W} workers, ${s.toFixed(1)}s = ${((to - from) / s).toFixed(1)}x realtime)`);
 }
-try {
-  await Promise.all([...Array(workers).keys()].map(worker));
-  clearInterval(progress);
-  const list = path.join(segDir, 'list.txt');
-  fs.writeFileSync(list, fs.readdirSync(segDir).filter(f => f.endsWith('.mp4')).sort().map(f => `file '${f}'`).join('\n'));
-  await run('ffmpeg', ['-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', list,
-    ...(from > 0 ? ['-ss', String(from)] : []), '-i', audio, '-map', '0:v', '-map', '1:a',
-    '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', part]);
-} catch (e) {
-  clearInterval(progress);
-  console.error(e.message, '- partial output left in', segDir);
-  process.exit(1);
-}
-fs.rmSync(segDir, { recursive: true, force: true });
-fs.renameSync(part, out);
-console.log(`wrote ${out}  (${n} frames, ${held} reused holds, ${workers} workers, ${((Date.now() - t0) / 1000).toFixed(1)}s)`);

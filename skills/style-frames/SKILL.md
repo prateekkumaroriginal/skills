@@ -7,7 +7,7 @@ description: Use after elementation and before animating a motion-graphic video,
 
 **Style frames** are finished-looking stills of the video's elements and key moments. **Motion tests** are short clips of those same elements moving. They build on the look the user already approved in the `elementation` skill: every element kind in every state, and how each one moves. Together they let the user approve the video's look and motion in full before any scene is animated, so that feedback arrives before the first cut instead of after it.
 
-Render both with the same renderer and assets the video will use, at the video's resolution, so what the user approves is what the cuts will show. In a `director` project that is the kit in `src/`: stills with `render.mjs --stills`, motion tests as their own page with `--page`.
+Render both with the same renderer and assets the video will use, at the video's resolution, so what the user approves is what the cuts will show. In a `director` project that is the kit in `src/`: stills with `render.mjs --stills`, motion tests as their own scene module with `--scene`.
 
 Inputs: `brief.md`, the confirmed `script.md`, and `style.md` with its inventory and approved look from elementation. Outputs go in the project folder:
 

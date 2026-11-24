@@ -1,4 +1,4 @@
-// The video's scenes for the canvas renderer: the counterpart of index.html.
+// The video's scenes.
 // render.mjs calls build() once per worker, then for each frame seeks the timeline and calls draw(ctx, t).
 // Replace the fonts, colours and scene content with this video's own; keep build() returning { seq, draw }.
 import { TIMING, font, fallbackFonts, node, pathNode, background, draw as drawTree } from './graph.mjs';

@@ -1,14 +1,15 @@
-// A small retained scene graph drawn with Skia (@napi-rs/canvas): the canvas counterpart of index.html.
-// Nodes have the same props Motion animates in the HTML kit (x, y, scale, scaleY, rotate, opacity) plus left/top,
-// and children are positioned inside their parent. Built-in kinds: group, box, text, icon, path, dot, image.
+// A small retained scene graph drawn with Skia (@napi-rs/canvas). Nodes sit at left/top inside their parent and
+// move through the props the Motion sequence animates (x, y, scale, scaleY, rotate, opacity, colours). Built-in kinds: group, box, text, icon, path, dot, image.
 // Add the video's own elements with kind(name, { box, paint }); see README.md.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createCanvas, GlobalFonts, Path2D, Image } from '@napi-rs/canvas';
 
-export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..'); // project folder
-export const TIMING = JSON.parse(fs.readFileSync(path.join(ROOT, 'audio/timing.json'), 'utf8'));
+export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'); // project folder (this file is in src/)
+// Word timings from the voice-over; empty until the narration exists (look frame, style frames, motion tests).
+const timingFile = path.join(ROOT, 'audio/timing.json');
+export const TIMING = fs.existsSync(timingFile) ? JSON.parse(fs.readFileSync(timingFile, 'utf8')) : { duration: 0, words: [] };
 export const W = 1920, H = 1080;
 
 // ---------- fonts and text ----------
