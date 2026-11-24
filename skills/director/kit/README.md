@@ -5,7 +5,7 @@ Copy this folder to the project's `src/`, then run `npm install` there. If Playw
 | File | Job |
 |---|---|
 | `index.html` | The video page. Write the scenes here, or in scripts it loads. |
-| `render.mjs` | Renders `cuts/cut-NN.mp4` with `audio/narration.m4a`, or full-size stills with `--stills`. |
+| `render.mjs` | Renders `cuts/cut-NN.mp4` with `audio/narration.m4a`, or full-size stills with `--stills`. Video frames are split across parallel browsers (`--workers`, default half the CPU cores up to 8). |
 | `sheet.sh` | Builds a contact sheet of stills, 1568 px wide and labelled with times. |
 | `beats.py` | Fills keyword times from `timing.json` into `beat-sheet.template.md` and writes `beat-sheet.md`. |
 | `build_icons.mjs` | Bundles the SVG icons in `assets/icons/` into `icons.js`. |
@@ -14,7 +14,7 @@ Copy this folder to the project's `src/`, then run `npm install` there. If Playw
 
 `render.mjs` loads the page and waits for every `@font-face`. It then calls `build()` once and `render(t)` once per frame. `window.TIMING` holds `audio/timing.json`. Every frame must depend only on `t`, so a still at 12.5 s is the same whether or not 12.4 s was drawn before it:
 
-- Make all motion part of the single paused Motion sequence that `render(t)` seeks.
+- Make all motion part of the single paused Motion sequence that `render(t)` seeks. Parallel workers rely on this: each draws its own run of frames from a fresh page.
 - Keep wall-clock timers, `Math.random()` and network requests off the page.
 - Give every loop a finite `repeat` count.
 
