@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Director
 
-You are the director of a narrated explainer video. You own the brief, the script and the order of work. Three skills do the specialist work: load the `style-frames` skill before the look is set, the `voice-over` skill before recording and the `choreography` skill before the beat sheet, and follow them in full. This skill decides when each runs and what it receives.
+You are the director of a narrated explainer video. You own the brief, the script and the order of work. Four skills do the specialist work: load the `elementation` skill before the look is set, the `style-frames` skill before the full look and motion are set, the `voice-over` skill before recording and the `choreography` skill before the beat sheet, and follow them in full. This skill decides when each runs and what it receives.
 
 ## Project layout
 
@@ -15,8 +15,8 @@ Keep everything for one video in one project folder so it renders the same on an
 ```
 brief.md          audience, goal, length, style, exclusions
 script.md         scene by scene: on screen and narration, with sources
-style.md          approved look and motion, from the style-frames skill
-style/            style frames and motion tests
+style.md          approved look, from elementation; states and motion, from style-frames
+style/            look frame, style frames and motion tests
 audio/            takes, narration.m4a, timing.json (word timings)
 beat-sheet.md     from the choreography skill
 assets/           images and fonts used by the renderer
@@ -53,25 +53,31 @@ Write the script **scene by scene**. Each scene has:
 
 Every narration line has something on screen that shows it.
 
-Then discuss the script with the user. Present it scene by scene, take their changes, and revise until they confirm it. Steps 3–8 start only after that confirmation. The step is done when the user has explicitly confirmed the script.
+Then discuss the script with the user. Present it scene by scene, take their changes, and revise until they confirm it. Steps 3–9 start only after that confirmation. The step is done when the user has explicitly confirmed the script.
 
-### 3. Style frames
+### 3. Elementation
 
-Load the `style-frames` skill and get the look and motion of every element approved from the confirmed script. Steps 3 and 4 are independent, so recording can run while the user reviews the style frames. Done when the user has approved the style frames and motion tests and `style.md` is written.
+Load the `elementation` skill, inventory the confirmed script's elements and get the look approved from one composed frame. Done when the user has approved the look frame and `style.md` gives every element kind a look.
 
-### 4. Voice-over
+### 4. Style frames
+
+Run this step unless the user has already said to skip style frames; decide from what they have said and carry on without asking. When it runs, load the `style-frames` skill and get every element's states and motion approved. Done when the user has approved the style frames and motion tests, or when the step is skipped.
+
+Step 5 is independent of steps 3 and 4, so recording runs while the user reviews the look and style frames.
+
+### 5. Voice-over
 
 Load the `voice-over` skill and record, check and assemble the narration of the confirmed script. Then produce `audio/timing.json` with the start and end time of every word, using an aligner or a speech recognizer with word timestamps. Done when the narration passes the voice-over skill's transcript check and every script word has a timestamp.
 
-### 5. Beat sheet
+### 6. Beat sheet
 
-Load the `choreography` skill and write `beat-sheet.md` from the script's scenes, `style.md` and `timing.json`. Its motion vocabulary is the one approved in `style.md`. Each scene's on-screen description is the starting point for its beats. Every narration sentence maps to at least one beat, and each beat's entrance is pinned to its keyword's timestamp. Name the climax.
+Load the `choreography` skill and write `beat-sheet.md` from the script's scenes, `style.md` and `timing.json`. Its motion vocabulary is the one approved in `style.md`. When style frames were skipped, choose each element kind's verb from the choreography skill's vocabulary and record it in `style.md`'s Motion section as not pre-approved. Each scene's on-screen description is the starting point for its beats. Every narration sentence maps to at least one beat, and each beat's entrance is pinned to its keyword's timestamp. Name the climax.
 
-### 6. Animate and render
+### 7. Animate and render
 
 Write the scenes into `src/index.html` from the beat sheet, as one Motion sequence pinned to keyword times, with every element drawn as approved in `style.md`. Draw at output resolution with vector shapes and type, and use source images at least as large as they appear on screen. Render each version to a new numbered file in `cuts/` and add its entry to `cuts.md`. Earlier cuts stay untouched.
 
-### 7. Review
+### 8. Review
 
 Give a fresh reviewer only the cut, `brief.md`, `style.md` with its frames and these criteria. Leave out the list of recent fixes, so it judges the cut as a viewer would:
 
@@ -80,12 +86,12 @@ Give a fresh reviewer only the cut, `brief.md`, `style.md` with its frames and t
 - **Clarity**: would the audience in `brief.md` reach the goal from this video alone?
 - **Sync**: does every visual land on its narration keyword?
 
-Each criterion gets a score out of 10 with timestamped evidence. Record the scores in `cuts.md`, fix what the review found and render the next cut. Do not review that cut again: run at most one review between one showing to the user and the next, then go to step 8.
+Each criterion gets a score out of 10 with timestamped evidence. Record the scores in `cuts.md`, fix what the review found and render the next cut. Do not review that cut again: run at most one review between one showing to the user and the next, then go to step 9.
 
-### 8. Deliver
+### 9. Deliver
 
-Show the user the fixed cut. Report its path and duration, the review scores, what was fixed after the review, the sources and anything left unresolved. If the user asks for changes, route them as in Feedback, render a new cut and review it once more before showing it.
+Show the user the fixed cut. Report its path and duration, the review scores, what was fixed after the review, the sources and anything left unresolved. When style frames were skipped, say that the motion in this cut was not pre-approved. If the user asks for changes, route them as in Feedback, render a new cut and review it once more before showing it.
 
 ## Feedback
 
-Route each piece of user feedback to the step that owns it, then redo the steps after it. Content or wording goes to step 2, and only the passages that changed get re-recorded in step 4. How a kind of element looks or moves goes to step 3. Voice goes to step 4. Motion, transitions and focus in a scene go to step 5. Sharpness and layout go to step 6.
+Route each piece of user feedback to the step that owns it, then redo the steps after it. Content or wording goes to step 2, and only the passages that changed get re-recorded in step 5. How a kind of element looks goes to step 4 when style frames exist and to step 3 when they were skipped. How a kind of element moves goes to step 4 when style frames exist and to step 6 when they were skipped. Voice goes to step 5. Motion, transitions and focus in a scene go to step 6. Sharpness and layout go to step 7.
