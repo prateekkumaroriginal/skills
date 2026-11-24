@@ -66,6 +66,7 @@ function build() {
   //   pop($('model'), K(1, 'language'));
   //   cam(K(1, 'language') - 0.2, 0.9, 960, 540, 1);
 
+  window.SEQ = seq;   // render.mjs reads segment times from this to reuse frames where nothing moves
   controls = animate(seq);
   controls.pause();
 }

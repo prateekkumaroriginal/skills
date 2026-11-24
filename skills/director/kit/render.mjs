@@ -45,14 +45,28 @@ async function openPage() {
     await document.fonts.ready;
     build();
   });
-  // CDP's capture with optimizeForSpeed is lossless PNG and about 3x faster than page.screenshot()
+  // CDP's capture with optimizeForSpeed is about 3x faster than page.screenshot(). Stills are lossless PNG;
+  // video frames are JPEG q95, which after the H.264 encode is indistinguishable from PNG and about 30% faster.
   const cdp = await page.context().newCDPSession(page);
-  const shot = async t => {
+  const shot = async (t, format = 'png') => {
     await page.evaluate(tt => render(tt), t);
-    const { data } = await cdp.send('Page.captureScreenshot', { format: 'png', optimizeForSpeed: true });
+    const { data } = await cdp.send('Page.captureScreenshot', { format, optimizeForSpeed: true, ...(format === 'jpeg' ? { quality: 95 } : {}) });
     return Buffer.from(data, 'base64');
   };
-  return { browser, shot };
+  // [start, end] in seconds of every animation segment, or null if the page doesn't expose window.SEQ
+  // or a segment's timing can't be read, in which case every frame is captured.
+  const spans = await page.evaluate(() => {
+    if (!Array.isArray(window.SEQ)) return null;
+    const out = [];
+    for (const s of SEQ) {
+      const o = s[2] || {};
+      if (typeof o.at !== 'number' || o.repeatDelay || (o.repeat && !Number.isFinite(o.repeat))) return null;
+      const start = o.at + (o.delay || 0);
+      out.push([start, start + (o.duration ?? 0.3) * ((o.repeat || 0) + 1)]);
+    }
+    return out;
+  });
+  return { browser, shot, spans };
 }
 
 if (stills) {
@@ -80,17 +94,20 @@ const run = (cmd, a) => new Promise((res, rej) => {
   return p;
 });
 const t0 = Date.now();
-let done = 0;
+let done = 0, held = 0;
 const progress = setInterval(() => console.log(`frame ${done}/${n}  ${((Date.now() - t0) / 1000).toFixed(0)}s`), 5000);
 async function worker(w) {
   const a = Math.floor(n * w / workers), b = Math.floor(n * (w + 1) / workers);
-  const { browser, shot } = await openPage();
-  const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'png', '-i', '-',
+  const { browser, shot, spans } = await openPage();
+  // A frame where no segment is running since the previous frame is identical to it, so reuse that capture.
+  const moves = i => !spans || spans.some(([s0, s1]) => s0 < from + i / fps && s1 > from + (i - 1) / fps);
+  const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '16', '-pix_fmt', 'yuv420p', '-tune', 'animation', '-threads', '2',
     path.join(segDir, `seg${String(w).padStart(3, '0')}.mp4`)], { stdio: ['pipe', 'inherit', 'inherit'] });
   const closed = new Promise(r => ff.on('close', r));
+  let buf;
   for (let i = a; i < b; i++) {
-    const buf = await shot(from + i / fps);
+    if (i === a || moves(i)) buf = await shot(from + i / fps, 'jpeg'); else held++;
     if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
     done++;
   }
@@ -114,4 +131,4 @@ try {
 }
 fs.rmSync(segDir, { recursive: true, force: true });
 fs.renameSync(part, out);
-console.log(`wrote ${out}  (${n} frames, ${workers} workers, ${((Date.now() - t0) / 1000).toFixed(1)}s)`);
+console.log(`wrote ${out}  (${n} frames, ${held} reused holds, ${workers} workers, ${((Date.now() - t0) / 1000).toFixed(1)}s)`);
