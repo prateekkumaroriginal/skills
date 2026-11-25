@@ -52,7 +52,7 @@ Give the video's recurring elements (a chip, a token, a cache cell) their own ki
 
 - **Fonts**: register every weight with `font()`. Glyphs the font lacks (✕, ✓) come from `fallbackFonts()`.
 - **Shadows and blurs** are the slowest things to draw. `dropShadow` blurs once per box size and reuses the result; prefer it to a live `glow` on anything that stays on screen.
-- **Opacity on a node with children** blends the whole group, which costs one full-frame layer while the opacity is below 1. When a dim lasts long, dim the leaves rather than their container.
+- **Opacity on a node with children** multiplies down the tree: each child is drawn at its parent's opacity. Where children overlap, a faded child underneath shows through the one on top. Text on a card's box looks the same, but a cover that hides another child, or overlapping opaque cards fading together, does not. Give those groups `layer: true`. They are then composited as one image, which costs a full-frame layer on every frame while their opacity is below 1.
 
 ## Looking at frames
 

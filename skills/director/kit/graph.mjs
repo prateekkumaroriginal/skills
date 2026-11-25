@@ -226,8 +226,10 @@ function drawNode(ctx, n, depth) {
     }
     ctx.globalAlpha *= a; ctx.drawImage(n._sprite, 0, 0); ctx.restore(); return;
   }
-  // CSS opacity on an element with children composites the group: draw it into a layer, then blend the layer.
-  const grouped = a < 0.998 && n.children.length > 0;
+  // Opacity multiplies down the tree: each child is drawn straight onto the frame at its parent's opacity.
+  // layer: true composites the group instead (one full-frame layer per fading group, about twice the draw time),
+  // for groups whose children overlap to hide each other.
+  const grouped = a < 0.998 && n.children.length > 0 && n.layer === true;
   let c = ctx;
   if (grouped) {
     c = layer(depth).getContext('2d'); c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, W, H);
