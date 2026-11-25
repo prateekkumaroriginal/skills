@@ -2,6 +2,8 @@
 
 Copy this folder to the project's `src/`, then run `npm install` there. Install FFmpeg as well.
 
+Keep `@napi-rs/canvas` pinned at 0.1.65. Version 1.0.13 leaks a full frame (8 MB at 1080p) of native memory on every `data()` call, even with forced GC, so a long render fills RAM and stalls in swap. Frames from 0.1.65 match 1.0.13 (SSIM 0.993 or higher).
+
 The renderer draws every frame with Skia in Node worker threads and streams them to one x264 process. Every element is drawn in code: each node sits at an explicit `left`/`top`, and anything sized by its text is measured with `measure()`.
 
 | File | Job |
