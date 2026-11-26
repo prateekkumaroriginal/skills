@@ -14,7 +14,8 @@
 // directly as a picture of skipped macroblocks (h264.mjs), so the file keeps a constant frame rate. The jobs are
 // joined without re-encoding.
 //   --enc vaapi  encodes on the Intel/AMD GPU instead of x264 (Linux): a little faster, smaller files, slightly lower quality at --qp 18.
-//   --enc videotoolbox (macOS), nvenc, qsv, amf: the other GPU encoders, through ffmpeg. Their settings come from the
+//   --enc qsv    encodes with Intel Quick Sync, through ffmpeg (run on Windows 11 with Iris Xe graphics).
+//   --enc videotoolbox (macOS), nvenc, amf: the other GPU encoders, through ffmpeg. Their settings come from the
 //                FFmpeg documentation and have not been run on such a machine yet; a stream the renderer can't use stops the render.
 //   --pipe       encodes through an ffmpeg process, as happens by itself when native/enc.node can't be loaded.
 //   PROF=1       prints where the time went.
@@ -154,7 +155,7 @@ if (process.env.RENDER_WORKER) {
     vaapi: ['-vaapi_device', device, ...raw, '-vf', 'hwupload', '-c:v', 'h264_vaapi', ...flags(v), ...tail],
     videotoolbox: [...raw, '-c:v', 'h264_videotoolbox', '-profile:v', 'baseline', '-coder', 'cavlc', '-b:v', opt('bitrate', '12M'), '-allow_sw', '0', ...tail],
     nvenc: [...raw, '-c:v', 'h264_nvenc', '-rc', 'constqp', '-qp', qp, '-coder', 'cavlc', '-refs', '1', '-strict_gop', '1', ...tail],
-    qsv: [...raw, '-c:v', 'h264_qsv', '-global_quality', qp, '-cavlc', '1', '-refs', '1', '-idr_interval', '0', ...tail],
+    qsv: [...raw, '-c:v', 'h264_qsv', '-global_quality', qp, '-cavlc', '1', '-refs', '1', '-idr_interval', '0', '-bsf:v', 'filter_units=remove_types=6', ...tail],
     amf: [...raw, '-c:v', 'h264_amf', '-rc', 'cqp', '-qp_i', qp, '-qp_p', qp, '-coder', 'cavlc', '-refs', '1', '-header_spacing', String(gop), ...tail],
   };
   if (!codecs[encoder]) fail(`unknown --enc ${encoder}: use one of ${Object.keys(codecs).join(', ')}`);
