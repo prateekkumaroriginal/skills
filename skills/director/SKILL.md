@@ -22,7 +22,7 @@ beat-sheet.md     from the choreography skill
 assets/           images and fonts used by the renderer
 src/              renderer: a copy of this skill's kit/ plus the video's scenes
 cuts/             cut-01.mp4, cut-02.mp4, ...
-cuts.md           one entry per cut: what changed, why, review scores
+cuts.md           one entry per cut: what changed, why, review scores when reviewed
 ```
 
 The renderer reads fonts and images only from `assets/`, never from OS font folders or absolute paths. Start `src/` by copying this skill's [`kit/`](kit/README.md) into it; its README holds the scene contract, the commands and the Motion gotchas.
@@ -38,6 +38,7 @@ Ask the user, in one round, whatever they haven't already said:
 - Target length
 - How the narration should sound (the voice-over skill's question)
 - Anything to include or leave out
+- Whether a fresh reviewer should review the first cut before they see it
 
 Defaults unless the user says otherwise: 1920×1080 at 30 fps, no subtitles, no in-video progress bar or playback UI. Write `brief.md`. Done when every item has an answer or a stated default.
 
@@ -79,6 +80,8 @@ Write the scenes into `src/scene.mjs` from the beat sheet, as one Motion sequenc
 
 ### 8. Review
 
+Run this step only when the user asked for a review, in the brief or later; otherwise show them the first cut as rendered and go to step 9.
+
 Give a fresh reviewer only the cut, `brief.md`, `style.md` with its frames and these criteria. Leave out the list of recent fixes, so it judges the cut as a viewer would:
 
 - **Animation, Transition, Focus, Choreography**: the choreography skill's Review section
@@ -86,11 +89,11 @@ Give a fresh reviewer only the cut, `brief.md`, `style.md` with its frames and t
 - **Clarity**: would the audience in `brief.md` reach the goal from this video alone?
 - **Sync**: does every visual land on its narration keyword?
 
-Each criterion gets a score out of 10 with timestamped evidence. Record the scores in `cuts.md`, fix what the review found and render the next cut. Do not review that cut again: run at most one review between one showing to the user and the next, then go to step 9.
+Each criterion gets a score out of 10 with timestamped evidence. Record the scores in `cuts.md`, fix what the review found and render the next cut. Each request buys one review: show the fixed cut without reviewing it again.
 
 ### 9. Deliver
 
-Show the user the fixed cut. Report its path and duration, the review scores, what was fixed after the review, the sources and anything left unresolved. When style frames were skipped, say that the motion in this cut was not pre-approved. If the user asks for changes, route them as in Feedback, render a new cut and review it once more before showing it.
+Show the user the latest cut. Report its path and duration, the sources and anything left unresolved; when the cut was reviewed, add the review scores and what was fixed after the review, and when it was not, say so. When style frames were skipped, say that the motion in this cut was not pre-approved. If the user asks for changes, route them as in Feedback, render a new cut with exactly those changes and show it. A cut made from the user's feedback is reviewed only when the user asks for a review of it.
 
 ## Feedback
 
