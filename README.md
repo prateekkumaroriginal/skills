@@ -8,3 +8,7 @@
 - `choreography`: A guide for choosing animations and transitions.
 - `elementation`: Lists every element a confirmed video script calls for and gets the look approved from one composed frame, the user's first look at the video.
 - `style-frames`: Builds on elementation with style frames of every element state and motion tests, and gets the full look and motion approved before animation.
+
+## Benchmarks
+
+- [`benchmarks/director-kit`](benchmarks/director-kit/README.md): renders one fixed video with the director skill's render kit and records the machine's configuration and the time. Results are in [RESULTS.md](benchmarks/director-kit/RESULTS.md).

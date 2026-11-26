@@ -1,0 +1,4773 @@
+{
+"duration": 253.1,
+"speech": 251.6,
+"passages": [
+{
+"p": 1,
+"scene": 1,
+"start": 0.0
+},
+{
+"p": 2,
+"scene": 2,
+"start": 12.998
+},
+{
+"p": 3,
+"scene": 3,
+"start": 33.275
+},
+{
+"p": 4,
+"scene": 4,
+"start": 56.513
+},
+{
+"p": 5,
+"scene": 5,
+"start": 77.581
+},
+{
+"p": 6,
+"scene": 5,
+"start": 89.18
+},
+{
+"p": 7,
+"scene": 6,
+"start": 94.978
+},
+{
+"p": 8,
+"scene": 7,
+"start": 110.296
+},
+{
+"p": 9,
+"scene": 8,
+"start": 127.375
+},
+{
+"p": 10,
+"scene": 9,
+"start": 144.133
+},
+{
+"p": 11,
+"scene": 10,
+"start": 166.332
+},
+{
+"p": 12,
+"scene": 11,
+"start": 180.921
+},
+{
+"p": 13,
+"scene": 11,
+"start": 196.768
+},
+{
+"p": 14,
+"scene": 12,
+"start": 207.764
+},
+{
+"p": 15,
+"scene": 13,
+"start": 226.503
+}
+],
+"words": [
+{
+"p": 1,
+"w": "your",
+"s": 0.0,
+"e": 0.14,
+"matched": true
+},
+{
+"p": 1,
+"w": "family",
+"s": 0.14,
+"e": 0.44,
+"matched": true
+},
+{
+"p": 1,
+"w": "sends",
+"s": 0.44,
+"e": 0.74,
+"matched": true
+},
+{
+"p": 1,
+"w": "you",
+"s": 0.74,
+"e": 0.96,
+"matched": true
+},
+{
+"p": 1,
+"w": "a",
+"s": 0.96,
+"e": 1.02,
+"matched": true
+},
+{
+"p": 1,
+"w": "photo",
+"s": 1.02,
+"e": 1.32,
+"matched": true
+},
+{
+"p": 1,
+"w": "and",
+"s": 1.8,
+"e": 1.9,
+"matched": true
+},
+{
+"p": 1,
+"w": "in",
+"s": 1.9,
+"e": 2.02,
+"matched": true
+},
+{
+"p": 1,
+"w": "a",
+"s": 2.02,
+"e": 2.08,
+"matched": true
+},
+{
+"p": 1,
+"w": "blink",
+"s": 2.08,
+"e": 2.3,
+"matched": true
+},
+{
+"p": 1,
+"w": "there",
+"s": 2.94,
+"e": 2.98,
+"matched": true
+},
+{
+"p": 1,
+"w": "it",
+"s": 2.98,
+"e": 3.12,
+"matched": true
+},
+{
+"p": 1,
+"w": "is",
+"s": 3.12,
+"e": 3.22,
+"matched": true
+},
+{
+"p": 1,
+"w": "on",
+"s": 3.22,
+"e": 3.36,
+"matched": true
+},
+{
+"p": 1,
+"w": "your",
+"s": 3.36,
+"e": 3.46,
+"matched": true
+},
+{
+"p": 1,
+"w": "tablet",
+"s": 3.46,
+"e": 3.78,
+"matched": true
+},
+{
+"p": 1,
+"w": "later",
+"s": 4.6,
+"e": 4.6,
+"matched": true
+},
+{
+"p": 1,
+"w": "they",
+"s": 4.6,
+"e": 4.84,
+"matched": true
+},
+{
+"p": 1,
+"w": "play",
+"s": 4.84,
+"e": 5.02,
+"matched": true
+},
+{
+"p": 1,
+"w": "a",
+"s": 5.02,
+"e": 5.16,
+"matched": true
+},
+{
+"p": 1,
+"w": "video",
+"s": 5.16,
+"e": 5.36,
+"matched": true
+},
+{
+"p": 1,
+"w": "game",
+"s": 5.36,
+"e": 5.68,
+"matched": true
+},
+{
+"p": 1,
+"w": "or",
+"s": 6.1,
+"e": 6.28,
+"matched": true
+},
+{
+"p": 1,
+"w": "ask",
+"s": 6.28,
+"e": 6.54,
+"matched": true
+},
+{
+"p": 1,
+"w": "an",
+"s": 6.54,
+"e": 6.64,
+"matched": true
+},
+{
+"p": 1,
+"w": "ai",
+"s": 6.64,
+"e": 6.9,
+"matched": true
+},
+{
+"p": 1,
+"w": "assistant",
+"s": 6.9,
+"e": 7.36,
+"matched": true
+},
+{
+"p": 1,
+"w": "a",
+"s": 7.36,
+"e": 7.58,
+"matched": true
+},
+{
+"p": 1,
+"w": "question",
+"s": 7.58,
+"e": 7.94,
+"matched": true
+},
+{
+"p": 1,
+"w": "behind",
+"s": 8.8,
+"e": 8.96,
+"matched": true
+},
+{
+"p": 1,
+"w": "all",
+"s": 8.96,
+"e": 9.26,
+"matched": true
+},
+{
+"p": 1,
+"w": "of",
+"s": 9.26,
+"e": 9.44,
+"matched": true
+},
+{
+"p": 1,
+"w": "it",
+"s": 9.44,
+"e": 9.54,
+"matched": true
+},
+{
+"p": 1,
+"w": "are",
+"s": 9.54,
+"e": 9.6,
+"matched": true
+},
+{
+"p": 1,
+"w": "two",
+"s": 9.6,
+"e": 9.9,
+"matched": true
+},
+{
+"p": 1,
+"w": "very",
+"s": 9.9,
+"e": 10.24,
+"matched": true
+},
+{
+"p": 1,
+"w": "different",
+"s": 10.24,
+"e": 10.56,
+"matched": true
+},
+{
+"p": 1,
+"w": "helpers",
+"s": 10.56,
+"e": 10.8,
+"matched": true
+},
+{
+"p": 1,
+"w": "let's",
+"s": 11.7,
+"e": 11.94,
+"matched": true
+},
+{
+"p": 1,
+"w": "meet",
+"s": 11.94,
+"e": 12.08,
+"matched": true
+},
+{
+"p": 1,
+"w": "them",
+"s": 12.08,
+"e": 12.28,
+"matched": true
+},
+{
+"p": 2,
+"w": "first",
+"s": 12.998,
+"e": 13.338,
+"matched": true
+},
+{
+"p": 2,
+"w": "a",
+"s": 13.858,
+"e": 14.038,
+"matched": true
+},
+{
+"p": 2,
+"w": "secret",
+"s": 14.038,
+"e": 14.298,
+"matched": true
+},
+{
+"p": 2,
+"w": "zoom",
+"s": 15.018,
+"e": 15.038,
+"matched": true
+},
+{
+"p": 2,
+"w": "in",
+"s": 15.038,
+"e": 15.258,
+"matched": true
+},
+{
+"p": 2,
+"w": "very",
+"s": 15.258,
+"e": 15.518,
+"matched": true
+},
+{
+"p": 2,
+"w": "close",
+"s": 15.518,
+"e": 15.938,
+"matched": true
+},
+{
+"p": 2,
+"w": "and",
+"s": 15.938,
+"e": 16.458,
+"matched": true
+},
+{
+"p": 2,
+"w": "every",
+"s": 16.458,
+"e": 16.658,
+"matched": true
+},
+{
+"p": 2,
+"w": "picture",
+"s": 16.658,
+"e": 16.998,
+"matched": true
+},
+{
+"p": 2,
+"w": "on",
+"s": 16.998,
+"e": 17.158,
+"matched": true
+},
+{
+"p": 2,
+"w": "a",
+"s": 17.158,
+"e": 17.258,
+"matched": true
+},
+{
+"p": 2,
+"w": "screen",
+"s": 17.258,
+"e": 17.558,
+"matched": true
+},
+{
+"p": 2,
+"w": "is",
+"s": 17.558,
+"e": 18.158,
+"matched": true
+},
+{
+"p": 2,
+"w": "made",
+"s": 18.158,
+"e": 18.338,
+"matched": true
+},
+{
+"p": 2,
+"w": "of",
+"s": 18.338,
+"e": 18.458,
+"matched": true
+},
+{
+"p": 2,
+"w": "tiny",
+"s": 18.458,
+"e": 18.798,
+"matched": true
+},
+{
+"p": 2,
+"w": "coloured",
+"s": 18.798,
+"e": 18.988,
+"matched": false
+},
+{
+"p": 2,
+"w": "dots",
+"s": 19.178,
+"e": 19.518,
+"matched": true
+},
+{
+"p": 2,
+"w": "called",
+"s": 20.038,
+"e": 20.338,
+"matched": true
+},
+{
+"p": 2,
+"w": "pixels",
+"s": 20.338,
+"e": 20.678,
+"matched": true
+},
+{
+"p": 2,
+"w": "each",
+"s": 21.598,
+"e": 21.698,
+"matched": true
+},
+{
+"p": 2,
+"w": "dot",
+"s": 21.698,
+"e": 21.978,
+"matched": true
+},
+{
+"p": 2,
+"w": "is",
+"s": 21.978,
+"e": 22.278,
+"matched": true
+},
+{
+"p": 2,
+"w": "just",
+"s": 22.278,
+"e": 22.598,
+"matched": true
+},
+{
+"p": 2,
+"w": "a",
+"s": 22.598,
+"e": 22.798,
+"matched": true
+},
+{
+"p": 2,
+"w": "few",
+"s": 22.798,
+"e": 23.018,
+"matched": true
+},
+{
+"p": 2,
+"w": "numbers",
+"s": 23.018,
+"e": 23.378,
+"matched": true
+},
+{
+"p": 2,
+"w": "that",
+"s": 23.378,
+"e": 23.878,
+"matched": true
+},
+{
+"p": 2,
+"w": "tell",
+"s": 23.878,
+"e": 24.118,
+"matched": true
+},
+{
+"p": 2,
+"w": "the",
+"s": 24.118,
+"e": 24.298,
+"matched": true
+},
+{
+"p": 2,
+"w": "screen",
+"s": 24.298,
+"e": 24.598,
+"matched": true
+},
+{
+"p": 2,
+"w": "how",
+"s": 24.598,
+"e": 24.938,
+"matched": true
+},
+{
+"p": 2,
+"w": "much",
+"s": 24.938,
+"e": 25.118,
+"matched": true
+},
+{
+"p": 2,
+"w": "red",
+"s": 25.118,
+"e": 25.498,
+"matched": true
+},
+{
+"p": 2,
+"w": "green",
+"s": 25.958,
+"e": 26.158,
+"matched": true
+},
+{
+"p": 2,
+"w": "and",
+"s": 26.158,
+"e": 26.598,
+"matched": true
+},
+{
+"p": 2,
+"w": "blue",
+"s": 26.598,
+"e": 26.878,
+"matched": true
+},
+{
+"p": 2,
+"w": "to",
+"s": 26.878,
+"e": 27.078,
+"matched": true
+},
+{
+"p": 2,
+"w": "show",
+"s": 27.078,
+"e": 27.358,
+"matched": true
+},
+{
+"p": 2,
+"w": "a",
+"s": 28.038,
+"e": 28.058,
+"matched": true
+},
+{
+"p": 2,
+"w": "picture",
+"s": 28.058,
+"e": 28.338,
+"matched": true
+},
+{
+"p": 2,
+"w": "that",
+"s": 28.338,
+"e": 28.858,
+"matched": true
+},
+{
+"p": 2,
+"w": "fills",
+"s": 28.858,
+"e": 29.158,
+"matched": true
+},
+{
+"p": 2,
+"w": "a",
+"s": 29.158,
+"e": 29.438,
+"matched": true
+},
+{
+"p": 2,
+"w": "typical",
+"s": 29.438,
+"e": 29.818,
+"matched": true
+},
+{
+"p": 2,
+"w": "tv",
+"s": 29.818,
+"e": 30.238,
+"matched": true
+},
+{
+"p": 2,
+"w": "screen",
+"s": 30.238,
+"e": 30.678,
+"matched": true
+},
+{
+"p": 2,
+"w": "has",
+"s": 30.678,
+"e": 31.298,
+"matched": true
+},
+{
+"p": 2,
+"w": "about",
+"s": 31.298,
+"e": 31.478,
+"matched": true
+},
+{
+"p": 2,
+"w": "two",
+"s": 31.478,
+"e": 31.668,
+"matched": false
+},
+{
+"p": 2,
+"w": "million",
+"s": 31.858,
+"e": 32.138,
+"matched": true
+},
+{
+"p": 2,
+"w": "of",
+"s": 32.138,
+"e": 32.418,
+"matched": true
+},
+{
+"p": 2,
+"w": "them",
+"s": 32.418,
+"e": 32.558,
+"matched": true
+},
+{
+"p": 3,
+"w": "the",
+"s": 33.275,
+"e": 33.395,
+"matched": true
+},
+{
+"p": 3,
+"w": "first",
+"s": 33.395,
+"e": 33.575,
+"matched": true
+},
+{
+"p": 3,
+"w": "helper",
+"s": 33.575,
+"e": 33.755,
+"matched": true
+},
+{
+"p": 3,
+"w": "is",
+"s": 33.755,
+"e": 34.115,
+"matched": true
+},
+{
+"p": 3,
+"w": "the",
+"s": 34.115,
+"e": 34.215,
+"matched": true
+},
+{
+"p": 3,
+"w": "one",
+"s": 34.215,
+"e": 34.355,
+"matched": true
+},
+{
+"p": 3,
+"w": "you",
+"s": 34.355,
+"e": 34.495,
+"matched": true
+},
+{
+"p": 3,
+"w": "may",
+"s": 34.495,
+"e": 34.635,
+"matched": true
+},
+{
+"p": 3,
+"w": "have",
+"s": 34.635,
+"e": 34.775,
+"matched": true
+},
+{
+"p": 3,
+"w": "heard",
+"s": 34.775,
+"e": 34.935,
+"matched": true
+},
+{
+"p": 3,
+"w": "of",
+"s": 34.935,
+"e": 35.115,
+"matched": true
+},
+{
+"p": 3,
+"w": "the",
+"s": 35.775,
+"e": 35.795,
+"matched": true
+},
+{
+"p": 3,
+"w": "cpu",
+"s": 35.795,
+"e": 36.075,
+"matched": true
+},
+{
+"p": 3,
+"w": "the",
+"s": 36.615,
+"e": 36.755,
+"matched": true
+},
+{
+"p": 3,
+"w": "central",
+"s": 36.755,
+"e": 37.135,
+"matched": true
+},
+{
+"p": 3,
+"w": "processing",
+"s": 37.135,
+"e": 37.815,
+"matched": true
+},
+{
+"p": 3,
+"w": "unit",
+"s": 37.815,
+"e": 38.215,
+"matched": true
+},
+{
+"p": 3,
+"w": "think",
+"s": 39.095,
+"e": 39.275,
+"matched": true
+},
+{
+"p": 3,
+"w": "of",
+"s": 39.275,
+"e": 39.435,
+"matched": true
+},
+{
+"p": 3,
+"w": "it",
+"s": 39.435,
+"e": 39.535,
+"matched": true
+},
+{
+"p": 3,
+"w": "as",
+"s": 39.535,
+"e": 39.635,
+"matched": true
+},
+{
+"p": 3,
+"w": "a",
+"s": 39.635,
+"e": 39.755,
+"matched": true
+},
+{
+"p": 3,
+"w": "small",
+"s": 39.755,
+"e": 40.035,
+"matched": true
+},
+{
+"p": 3,
+"w": "team",
+"s": 40.035,
+"e": 40.515,
+"matched": true
+},
+{
+"p": 3,
+"w": "of",
+"s": 40.515,
+"e": 40.775,
+"matched": true
+},
+{
+"p": 3,
+"w": "very",
+"s": 40.775,
+"e": 41.055,
+"matched": true
+},
+{
+"p": 3,
+"w": "clever",
+"s": 41.055,
+"e": 41.395,
+"matched": true
+},
+{
+"p": 3,
+"w": "workers",
+"s": 41.395,
+"e": 41.855,
+"matched": true
+},
+{
+"p": 3,
+"w": "each",
+"s": 42.755,
+"e": 42.895,
+"matched": true
+},
+{
+"p": 3,
+"w": "follows",
+"s": 42.895,
+"e": 43.355,
+"matched": true
+},
+{
+"p": 3,
+"w": "instructions",
+"s": 43.355,
+"e": 43.815,
+"matched": true
+},
+{
+"p": 3,
+"w": "step",
+"s": 43.815,
+"e": 44.675,
+"matched": true
+},
+{
+"p": 3,
+"w": "by",
+"s": 44.675,
+"e": 44.895,
+"matched": true
+},
+{
+"p": 3,
+"w": "step",
+"s": 44.895,
+"e": 45.175,
+"matched": true
+},
+{
+"p": 3,
+"w": "extremely",
+"s": 45.495,
+"e": 46.055,
+"matched": true
+},
+{
+"p": 3,
+"w": "fast",
+"s": 46.055,
+"e": 46.615,
+"matched": true
+},
+{
+"p": 3,
+"w": "and",
+"s": 47.255,
+"e": 47.375,
+"matched": true
+},
+{
+"p": 3,
+"w": "can",
+"s": 47.375,
+"e": 47.495,
+"matched": true
+},
+{
+"p": 3,
+"w": "handle",
+"s": 47.495,
+"e": 47.855,
+"matched": true
+},
+{
+"p": 3,
+"w": "almost",
+"s": 47.855,
+"e": 48.255,
+"matched": true
+},
+{
+"p": 3,
+"w": "anything",
+"s": 48.255,
+"e": 48.655,
+"matched": true
+},
+{
+"p": 3,
+"w": "your",
+"s": 49.495,
+"e": 49.555,
+"matched": true
+},
+{
+"p": 3,
+"w": "email",
+"s": 49.555,
+"e": 49.895,
+"matched": true
+},
+{
+"p": 3,
+"w": "your",
+"s": 50.255,
+"e": 50.335,
+"matched": true
+},
+{
+"p": 3,
+"w": "spelling",
+"s": 50.335,
+"e": 50.715,
+"matched": true
+},
+{
+"p": 3,
+"w": "deciding",
+"s": 51.115,
+"e": 51.355,
+"matched": true
+},
+{
+"p": 3,
+"w": "what",
+"s": 51.355,
+"e": 51.715,
+"matched": true
+},
+{
+"p": 3,
+"w": "to",
+"s": 51.715,
+"e": 51.835,
+"matched": true
+},
+{
+"p": 3,
+"w": "do",
+"s": 51.835,
+"e": 51.955,
+"matched": true
+},
+{
+"p": 3,
+"w": "next",
+"s": 51.955,
+"e": 52.175,
+"matched": true
+},
+{
+"p": 3,
+"w": "a",
+"s": 53.275,
+"e": 53.295,
+"matched": true
+},
+{
+"p": 3,
+"w": "home",
+"s": 53.295,
+"e": 53.455,
+"matched": true
+},
+{
+"p": 3,
+"w": "computer",
+"s": 53.455,
+"e": 53.915,
+"matched": true
+},
+{
+"p": 3,
+"w": "has",
+"s": 53.915,
+"e": 54.315,
+"matched": true
+},
+{
+"p": 3,
+"w": "four",
+"s": 54.315,
+"e": 54.895,
+"matched": true
+},
+{
+"p": 3,
+"w": "to",
+"s": 54.895,
+"e": 55.055,
+"matched": true
+},
+{
+"p": 3,
+"w": "two",
+"s": 55.055,
+"e": 55.275,
+"matched": true
+},
+{
+"p": 3,
+"w": "dozen",
+"s": 55.275,
+"e": 55.495,
+"matched": true
+},
+{
+"p": 3,
+"w": "of",
+"s": 55.495,
+"e": 55.715,
+"matched": true
+},
+{
+"p": 3,
+"w": "them",
+"s": 55.715,
+"e": 55.835,
+"matched": true
+},
+{
+"p": 4,
+"w": "now",
+"s": 56.513,
+"e": 56.753,
+"matched": true
+},
+{
+"p": 4,
+"w": "say",
+"s": 57.013,
+"e": 57.193,
+"matched": true
+},
+{
+"p": 4,
+"w": "the",
+"s": 57.193,
+"e": 57.313,
+"matched": true
+},
+{
+"p": 4,
+"w": "photo",
+"s": 57.313,
+"e": 57.573,
+"matched": true
+},
+{
+"p": 4,
+"w": "is",
+"s": 57.573,
+"e": 57.853,
+"matched": true
+},
+{
+"p": 4,
+"w": "a",
+"s": 57.853,
+"e": 57.913,
+"matched": true
+},
+{
+"p": 4,
+"w": "little",
+"s": 57.913,
+"e": 58.073,
+"matched": true
+},
+{
+"p": 4,
+"w": "dark",
+"s": 58.073,
+"e": 58.373,
+"matched": true
+},
+{
+"p": 4,
+"w": "and",
+"s": 58.893,
+"e": 58.933,
+"matched": true
+},
+{
+"p": 4,
+"w": "you",
+"s": 58.933,
+"e": 59.073,
+"matched": true
+},
+{
+"p": 4,
+"w": "tap",
+"s": 59.073,
+"e": 59.393,
+"matched": true
+},
+{
+"p": 4,
+"w": "brighten",
+"s": 59.393,
+"e": 59.973,
+"matched": true
+},
+{
+"p": 4,
+"w": "the",
+"s": 60.533,
+"e": 60.633,
+"matched": true
+},
+{
+"p": 4,
+"w": "job",
+"s": 60.633,
+"e": 60.813,
+"matched": true
+},
+{
+"p": 4,
+"w": "is",
+"s": 60.813,
+"e": 61.173,
+"matched": true
+},
+{
+"p": 4,
+"w": "simple",
+"s": 61.173,
+"e": 61.553,
+"matched": true
+},
+{
+"p": 4,
+"w": "for",
+"s": 62.073,
+"e": 62.293,
+"matched": true
+},
+{
+"p": 4,
+"w": "every",
+"s": 62.293,
+"e": 62.593,
+"matched": true
+},
+{
+"p": 4,
+"w": "dot",
+"s": 62.593,
+"e": 62.893,
+"matched": true
+},
+{
+"p": 4,
+"w": "add",
+"s": 62.893,
+"e": 63.353,
+"matched": true
+},
+{
+"p": 4,
+"w": "a",
+"s": 63.353,
+"e": 63.733,
+"matched": true
+},
+{
+"p": 4,
+"w": "little",
+"s": 63.733,
+"e": 63.873,
+"matched": true
+},
+{
+"p": 4,
+"w": "light",
+"s": 63.873,
+"e": 64.173,
+"matched": true
+},
+{
+"p": 4,
+"w": "our",
+"s": 65.133,
+"e": 65.133,
+"matched": true
+},
+{
+"p": 4,
+"w": "clever",
+"s": 65.133,
+"e": 65.413,
+"matched": true
+},
+{
+"p": 4,
+"w": "cpu",
+"s": 65.413,
+"e": 65.853,
+"matched": true
+},
+{
+"p": 4,
+"w": "workers",
+"s": 65.853,
+"e": 66.393,
+"matched": true
+},
+{
+"p": 4,
+"w": "each",
+"s": 66.393,
+"e": 66.813,
+"matched": true
+},
+{
+"p": 4,
+"w": "take",
+"s": 66.813,
+"e": 67.113,
+"matched": true
+},
+{
+"p": 4,
+"w": "a",
+"s": 67.113,
+"e": 67.213,
+"matched": true
+},
+{
+"p": 4,
+"w": "dot",
+"s": 67.213,
+"e": 67.433,
+"matched": true
+},
+{
+"p": 4,
+"w": "brighten",
+"s": 67.853,
+"e": 68.273,
+"matched": true
+},
+{
+"p": 4,
+"w": "it",
+"s": 68.273,
+"e": 68.373,
+"matched": true
+},
+{
+"p": 4,
+"w": "and",
+"s": 68.793,
+"e": 68.933,
+"matched": true
+},
+{
+"p": 4,
+"w": "move",
+"s": 68.933,
+"e": 69.153,
+"matched": true
+},
+{
+"p": 4,
+"w": "to",
+"s": 69.153,
+"e": 69.333,
+"matched": true
+},
+{
+"p": 4,
+"w": "the",
+"s": 69.333,
+"e": 69.453,
+"matched": true
+},
+{
+"p": 4,
+"w": "next",
+"s": 69.453,
+"e": 69.613,
+"matched": true
+},
+{
+"p": 4,
+"w": "they're",
+"s": 70.273,
+"e": 70.433,
+"matched": true
+},
+{
+"p": 4,
+"w": "quick",
+"s": 70.433,
+"e": 70.673,
+"matched": true
+},
+{
+"p": 4,
+"w": "but",
+"s": 71.213,
+"e": 71.393,
+"matched": true
+},
+{
+"p": 4,
+"w": "there",
+"s": 71.393,
+"e": 71.533,
+"matched": true
+},
+{
+"p": 4,
+"w": "are",
+"s": 71.533,
+"e": 71.753,
+"matched": true
+},
+{
+"p": 4,
+"w": "only",
+"s": 71.753,
+"e": 72.373,
+"matched": true
+},
+{
+"p": 4,
+"w": "a",
+"s": 72.373,
+"e": 72.553,
+"matched": true
+},
+{
+"p": 4,
+"w": "handful",
+"s": 72.553,
+"e": 72.913,
+"matched": true
+},
+{
+"p": 4,
+"w": "of",
+"s": 72.913,
+"e": 73.193,
+"matched": true
+},
+{
+"p": 4,
+"w": "them",
+"s": 73.193,
+"e": 73.353,
+"matched": true
+},
+{
+"p": 4,
+"w": "and",
+"s": 73.853,
+"e": 74.033,
+"matched": true
+},
+{
+"p": 4,
+"w": "two",
+"s": 74.033,
+"e": 74.153,
+"matched": false
+},
+{
+"p": 4,
+"w": "million",
+"s": 74.273,
+"e": 74.553,
+"matched": true
+},
+{
+"p": 4,
+"w": "dots",
+"s": 74.553,
+"e": 74.973,
+"matched": true
+},
+{
+"p": 4,
+"w": "is",
+"s": 74.973,
+"e": 75.433,
+"matched": true
+},
+{
+"p": 4,
+"w": "a",
+"s": 75.433,
+"e": 75.573,
+"matched": true
+},
+{
+"p": 4,
+"w": "very",
+"s": 75.573,
+"e": 75.953,
+"matched": true
+},
+{
+"p": 4,
+"w": "long",
+"s": 75.953,
+"e": 76.293,
+"matched": true
+},
+{
+"p": 4,
+"w": "line",
+"s": 76.293,
+"e": 76.813,
+"matched": true
+},
+{
+"p": 5,
+"w": "enter",
+"s": 77.581,
+"e": 77.841,
+"matched": true
+},
+{
+"p": 5,
+"w": "the",
+"s": 77.841,
+"e": 77.981,
+"matched": true
+},
+{
+"p": 5,
+"w": "second",
+"s": 77.981,
+"e": 78.221,
+"matched": true
+},
+{
+"p": 5,
+"w": "helper",
+"s": 78.221,
+"e": 78.461,
+"matched": true
+},
+{
+"p": 5,
+"w": "the",
+"s": 79.141,
+"e": 79.161,
+"matched": true
+},
+{
+"p": 5,
+"w": "gpu",
+"s": 79.161,
+"e": 79.441,
+"matched": true
+},
+{
+"p": 5,
+"w": "the",
+"s": 79.961,
+"e": 79.981,
+"matched": true
+},
+{
+"p": 5,
+"w": "graphics",
+"s": 79.981,
+"e": 80.181,
+"matched": true
+},
+{
+"p": 5,
+"w": "processing",
+"s": 80.181,
+"e": 80.781,
+"matched": true
+},
+{
+"p": 5,
+"w": "unit",
+"s": 80.781,
+"e": 81.121,
+"matched": true
+},
+{
+"p": 5,
+"w": "instead",
+"s": 81.821,
+"e": 81.961,
+"matched": true
+},
+{
+"p": 5,
+"w": "of",
+"s": 81.961,
+"e": 82.181,
+"matched": true
+},
+{
+"p": 5,
+"w": "a",
+"s": 82.181,
+"e": 82.261,
+"matched": true
+},
+{
+"p": 5,
+"w": "few",
+"s": 82.261,
+"e": 82.521,
+"matched": true
+},
+{
+"p": 5,
+"w": "clever",
+"s": 82.521,
+"e": 82.761,
+"matched": true
+},
+{
+"p": 5,
+"w": "workers",
+"s": 82.761,
+"e": 83.181,
+"matched": true
+},
+{
+"p": 5,
+"w": "it",
+"s": 83.701,
+"e": 83.801,
+"matched": true
+},
+{
+"p": 5,
+"w": "has",
+"s": 83.801,
+"e": 83.901,
+"matched": true
+},
+{
+"p": 5,
+"w": "thousands",
+"s": 83.901,
+"e": 84.181,
+"matched": true
+},
+{
+"p": 5,
+"w": "of",
+"s": 84.181,
+"e": 84.601,
+"matched": true
+},
+{
+"p": 5,
+"w": "simple",
+"s": 84.601,
+"e": 84.821,
+"matched": true
+},
+{
+"p": 5,
+"w": "ones",
+"s": 84.821,
+"e": 85.141,
+"matched": true
+},
+{
+"p": 5,
+"w": "a",
+"s": 85.721,
+"e": 85.801,
+"matched": true
+},
+{
+"p": 5,
+"w": "big",
+"s": 85.801,
+"e": 85.941,
+"matched": true
+},
+{
+"p": 5,
+"w": "gpu",
+"s": 85.941,
+"e": 86.341,
+"matched": true
+},
+{
+"p": 5,
+"w": "today",
+"s": 86.341,
+"e": 86.861,
+"matched": true
+},
+{
+"p": 5,
+"w": "has",
+"s": 86.861,
+"e": 87.141,
+"matched": true
+},
+{
+"p": 5,
+"w": "more",
+"s": 87.141,
+"e": 87.421,
+"matched": true
+},
+{
+"p": 5,
+"w": "than",
+"s": 87.421,
+"e": 87.641,
+"matched": true
+},
+{
+"p": 5,
+"w": "sixteen",
+"s": 87.641,
+"e": 87.774,
+"matched": false
+},
+{
+"p": 5,
+"w": "thousand",
+"s": 87.774,
+"e": 87.907,
+"matched": false
+},
+{
+"p": 6,
+"w": "on",
+"s": 89.18,
+"e": 89.36,
+"matched": true
+},
+{
+"p": 6,
+"w": "their",
+"s": 89.36,
+"e": 89.48,
+"matched": true
+},
+{
+"p": 6,
+"w": "own",
+"s": 89.48,
+"e": 89.74,
+"matched": true
+},
+{
+"p": 6,
+"w": "none",
+"s": 90.02,
+"e": 90.22,
+"matched": true
+},
+{
+"p": 6,
+"w": "is",
+"s": 90.22,
+"e": 90.46,
+"matched": true
+},
+{
+"p": 6,
+"w": "very",
+"s": 90.46,
+"e": 90.64,
+"matched": true
+},
+{
+"p": 6,
+"w": "smart",
+"s": 90.64,
+"e": 91.0,
+"matched": true
+},
+{
+"p": 6,
+"w": "but",
+"s": 91.44,
+"e": 91.6,
+"matched": true
+},
+{
+"p": 6,
+"w": "they",
+"s": 91.6,
+"e": 91.72,
+"matched": true
+},
+{
+"p": 6,
+"w": "all",
+"s": 91.72,
+"e": 91.94,
+"matched": true
+},
+{
+"p": 6,
+"w": "follow",
+"s": 91.94,
+"e": 92.32,
+"matched": true
+},
+{
+"p": 6,
+"w": "the",
+"s": 92.32,
+"e": 92.52,
+"matched": true
+},
+{
+"p": 6,
+"w": "same",
+"s": 92.52,
+"e": 92.74,
+"matched": true
+},
+{
+"p": 6,
+"w": "instruction",
+"s": 92.74,
+"e": 93.18,
+"matched": true
+},
+{
+"p": 6,
+"w": "at",
+"s": 93.18,
+"e": 93.72,
+"matched": true
+},
+{
+"p": 6,
+"w": "the",
+"s": 93.72,
+"e": 93.82,
+"matched": true
+},
+{
+"p": 6,
+"w": "same",
+"s": 93.82,
+"e": 94.04,
+"matched": true
+},
+{
+"p": 6,
+"w": "moment",
+"s": 94.04,
+"e": 94.32,
+"matched": true
+},
+{
+"p": 7,
+"w": "so",
+"s": 94.978,
+"e": 95.178,
+"matched": true
+},
+{
+"p": 7,
+"w": "the",
+"s": 95.178,
+"e": 95.558,
+"matched": true
+},
+{
+"p": 7,
+"w": "gpu",
+"s": 95.558,
+"e": 95.858,
+"matched": true
+},
+{
+"p": 7,
+"w": "gives",
+"s": 95.858,
+"e": 96.538,
+"matched": true
+},
+{
+"p": 7,
+"w": "every",
+"s": 96.538,
+"e": 96.878,
+"matched": true
+},
+{
+"p": 7,
+"w": "worker",
+"s": 96.878,
+"e": 97.258,
+"matched": true
+},
+{
+"p": 7,
+"w": "its",
+"s": 97.258,
+"e": 97.618,
+"matched": true
+},
+{
+"p": 7,
+"w": "own",
+"s": 97.618,
+"e": 97.798,
+"matched": true
+},
+{
+"p": 7,
+"w": "dot",
+"s": 97.798,
+"e": 98.058,
+"matched": true
+},
+{
+"p": 7,
+"w": "one",
+"s": 98.438,
+"e": 98.478,
+"matched": true
+},
+{
+"p": 7,
+"w": "instruction",
+"s": 98.478,
+"e": 98.858,
+"matched": true
+},
+{
+"p": 7,
+"w": "goes",
+"s": 98.858,
+"e": 99.278,
+"matched": true
+},
+{
+"p": 7,
+"w": "out",
+"s": 99.278,
+"e": 99.618,
+"matched": true
+},
+{
+"p": 7,
+"w": "and",
+"s": 99.798,
+"e": 99.958,
+"matched": true
+},
+{
+"p": 7,
+"w": "thousands",
+"s": 99.958,
+"e": 100.418,
+"matched": true
+},
+{
+"p": 7,
+"w": "of",
+"s": 100.418,
+"e": 100.718,
+"matched": true
+},
+{
+"p": 7,
+"w": "dots",
+"s": 100.718,
+"e": 100.958,
+"matched": true
+},
+{
+"p": 7,
+"w": "brighten",
+"s": 100.958,
+"e": 101.518,
+"matched": true
+},
+{
+"p": 7,
+"w": "together",
+"s": 101.518,
+"e": 101.838,
+"matched": true
+},
+{
+"p": 7,
+"w": "wave",
+"s": 102.218,
+"e": 102.318,
+"matched": true
+},
+{
+"p": 7,
+"w": "after",
+"s": 102.318,
+"e": 102.738,
+"matched": true
+},
+{
+"p": 7,
+"w": "wave",
+"s": 102.738,
+"e": 103.058,
+"matched": true
+},
+{
+"p": 7,
+"w": "until",
+"s": 103.338,
+"e": 103.618,
+"matched": true
+},
+{
+"p": 7,
+"w": "the",
+"s": 103.618,
+"e": 103.758,
+"matched": true
+},
+{
+"p": 7,
+"w": "whole",
+"s": 103.758,
+"e": 103.998,
+"matched": true
+},
+{
+"p": 7,
+"w": "picture",
+"s": 103.998,
+"e": 104.378,
+"matched": true
+},
+{
+"p": 7,
+"w": "is",
+"s": 104.378,
+"e": 104.578,
+"matched": true
+},
+{
+"p": 7,
+"w": "done",
+"s": 104.578,
+"e": 104.758,
+"matched": true
+},
+{
+"p": 7,
+"w": "almost",
+"s": 104.758,
+"e": 105.138,
+"matched": true
+},
+{
+"p": 7,
+"w": "at",
+"s": 105.138,
+"e": 105.338,
+"matched": true
+},
+{
+"p": 7,
+"w": "once",
+"s": 105.338,
+"e": 105.558,
+"matched": true
+},
+{
+"p": 7,
+"w": "like",
+"s": 105.858,
+"e": 106.058,
+"matched": true
+},
+{
+"p": 7,
+"w": "a",
+"s": 106.058,
+"e": 106.138,
+"matched": true
+},
+{
+"p": 7,
+"w": "stadium",
+"s": 106.138,
+"e": 106.478,
+"matched": true
+},
+{
+"p": 7,
+"w": "crowd",
+"s": 106.478,
+"e": 106.878,
+"matched": true
+},
+{
+"p": 7,
+"w": "holding",
+"s": 106.878,
+"e": 107.258,
+"matched": true
+},
+{
+"p": 7,
+"w": "up",
+"s": 107.258,
+"e": 107.438,
+"matched": true
+},
+{
+"p": 7,
+"w": "coloured",
+"s": 107.438,
+"e": 107.588,
+"matched": false
+},
+{
+"p": 7,
+"w": "cards",
+"s": 107.738,
+"e": 108.118,
+"matched": true
+},
+{
+"p": 7,
+"w": "to",
+"s": 108.118,
+"e": 108.438,
+"matched": true
+},
+{
+"p": 7,
+"w": "make",
+"s": 108.438,
+"e": 108.578,
+"matched": true
+},
+{
+"p": 7,
+"w": "one",
+"s": 108.578,
+"e": 108.898,
+"matched": true
+},
+{
+"p": 7,
+"w": "big",
+"s": 108.898,
+"e": 109.178,
+"matched": true
+},
+{
+"p": 7,
+"w": "picture",
+"s": 109.178,
+"e": 109.518,
+"matched": true
+},
+{
+"p": 8,
+"w": "so",
+"s": 110.296,
+"e": 110.476,
+"matched": true
+},
+{
+"p": 8,
+"w": "why",
+"s": 110.476,
+"e": 110.816,
+"matched": true
+},
+{
+"p": 8,
+"w": "not",
+"s": 110.816,
+"e": 110.956,
+"matched": true
+},
+{
+"p": 8,
+"w": "use",
+"s": 110.956,
+"e": 111.256,
+"matched": true
+},
+{
+"p": 8,
+"w": "only",
+"s": 111.256,
+"e": 111.596,
+"matched": true
+},
+{
+"p": 8,
+"w": "a",
+"s": 111.596,
+"e": 111.736,
+"matched": true
+},
+{
+"p": 8,
+"w": "gpu",
+"s": 111.736,
+"e": 111.876,
+"matched": true
+},
+{
+"p": 8,
+"w": "because",
+"s": 113.056,
+"e": 113.076,
+"matched": true
+},
+{
+"p": 8,
+"w": "those",
+"s": 113.076,
+"e": 113.396,
+"matched": true
+},
+{
+"p": 8,
+"w": "simple",
+"s": 113.396,
+"e": 113.656,
+"matched": true
+},
+{
+"p": 8,
+"w": "workers",
+"s": 113.656,
+"e": 114.056,
+"matched": true
+},
+{
+"p": 8,
+"w": "can't",
+"s": 114.056,
+"e": 114.576,
+"matched": true
+},
+{
+"p": 8,
+"w": "plan",
+"s": 114.576,
+"e": 114.816,
+"matched": true
+},
+{
+"p": 8,
+"w": "or",
+"s": 114.816,
+"e": 115.056,
+"matched": true
+},
+{
+"p": 8,
+"w": "make",
+"s": 115.056,
+"e": 115.336,
+"matched": true
+},
+{
+"p": 8,
+"w": "decisions",
+"s": 115.336,
+"e": 115.736,
+"matched": true
+},
+{
+"p": 8,
+"w": "the",
+"s": 116.576,
+"e": 116.596,
+"matched": true
+},
+{
+"p": 8,
+"w": "cpu",
+"s": 116.596,
+"e": 116.816,
+"matched": true
+},
+{
+"p": 8,
+"w": "runs",
+"s": 116.816,
+"e": 117.256,
+"matched": true
+},
+{
+"p": 8,
+"w": "the",
+"s": 117.256,
+"e": 117.456,
+"matched": true
+},
+{
+"p": 8,
+"w": "computer",
+"s": 117.456,
+"e": 117.736,
+"matched": true
+},
+{
+"p": 8,
+"w": "and",
+"s": 117.736,
+"e": 118.516,
+"matched": true
+},
+{
+"p": 8,
+"w": "hands",
+"s": 118.516,
+"e": 118.856,
+"matched": true
+},
+{
+"p": 8,
+"w": "the",
+"s": 118.856,
+"e": 119.116,
+"matched": true
+},
+{
+"p": 8,
+"w": "big",
+"s": 119.116,
+"e": 119.416,
+"matched": true
+},
+{
+"p": 8,
+"w": "repetitive",
+"s": 119.416,
+"e": 119.976,
+"matched": true
+},
+{
+"p": 8,
+"w": "jobs",
+"s": 119.976,
+"e": 120.436,
+"matched": true
+},
+{
+"p": 8,
+"w": "to",
+"s": 120.436,
+"e": 120.716,
+"matched": true
+},
+{
+"p": 8,
+"w": "the",
+"s": 120.716,
+"e": 120.796,
+"matched": true
+},
+{
+"p": 8,
+"w": "gpu",
+"s": 120.796,
+"e": 121.036,
+"matched": true
+},
+{
+"p": 8,
+"w": "like",
+"s": 121.876,
+"e": 121.976,
+"matched": true
+},
+{
+"p": 8,
+"w": "a",
+"s": 121.976,
+"e": 122.116,
+"matched": true
+},
+{
+"p": 8,
+"w": "head",
+"s": 122.116,
+"e": 122.296,
+"matched": true
+},
+{
+"p": 8,
+"w": "chef",
+"s": 122.296,
+"e": 122.556,
+"matched": true
+},
+{
+"p": 8,
+"w": "who",
+"s": 122.556,
+"e": 122.796,
+"matched": true
+},
+{
+"p": 8,
+"w": "plans",
+"s": 122.796,
+"e": 123.056,
+"matched": true
+},
+{
+"p": 8,
+"w": "the",
+"s": 123.056,
+"e": 123.276,
+"matched": true
+},
+{
+"p": 8,
+"w": "meal",
+"s": 123.276,
+"e": 123.476,
+"matched": true
+},
+{
+"p": 8,
+"w": "while",
+"s": 123.476,
+"e": 124.056,
+"matched": true
+},
+{
+"p": 8,
+"w": "a",
+"s": 124.056,
+"e": 124.156,
+"matched": true
+},
+{
+"p": 8,
+"w": "team",
+"s": 124.156,
+"e": 124.376,
+"matched": true
+},
+{
+"p": 8,
+"w": "of",
+"s": 124.376,
+"e": 124.516,
+"matched": true
+},
+{
+"p": 8,
+"w": "helpers",
+"s": 124.516,
+"e": 124.716,
+"matched": true
+},
+{
+"p": 8,
+"w": "chops",
+"s": 124.716,
+"e": 125.216,
+"matched": true
+},
+{
+"p": 8,
+"w": "a",
+"s": 125.216,
+"e": 125.516,
+"matched": true
+},
+{
+"p": 8,
+"w": "mountain",
+"s": 125.516,
+"e": 125.776,
+"matched": true
+},
+{
+"p": 8,
+"w": "of",
+"s": 125.776,
+"e": 126.116,
+"matched": true
+},
+{
+"p": 8,
+"w": "vegetables",
+"s": 126.116,
+"e": 126.376,
+"matched": true
+},
+{
+"p": 9,
+"w": "video",
+"s": 127.375,
+"e": 127.635,
+"matched": true
+},
+{
+"p": 9,
+"w": "games",
+"s": 127.635,
+"e": 127.975,
+"matched": true
+},
+{
+"p": 9,
+"w": "are",
+"s": 127.975,
+"e": 128.275,
+"matched": true
+},
+{
+"p": 9,
+"w": "where",
+"s": 128.275,
+"e": 128.475,
+"matched": true
+},
+{
+"p": 9,
+"w": "gpus",
+"s": 128.475,
+"e": 128.735,
+"matched": true
+},
+{
+"p": 9,
+"w": "began",
+"s": 128.735,
+"e": 129.275,
+"matched": true
+},
+{
+"p": 9,
+"w": "a",
+"s": 130.215,
+"e": 130.215,
+"matched": true
+},
+{
+"p": 9,
+"w": "game",
+"s": 130.215,
+"e": 130.395,
+"matched": true
+},
+{
+"p": 9,
+"w": "paints",
+"s": 130.395,
+"e": 130.695,
+"matched": true
+},
+{
+"p": 9,
+"w": "a",
+"s": 130.695,
+"e": 130.875,
+"matched": true
+},
+{
+"p": 9,
+"w": "brand",
+"s": 130.875,
+"e": 131.055,
+"matched": true
+},
+{
+"p": 9,
+"w": "new",
+"s": 131.055,
+"e": 131.335,
+"matched": true
+},
+{
+"p": 9,
+"w": "picture",
+"s": 131.335,
+"e": 131.635,
+"matched": true
+},
+{
+"p": 9,
+"w": "about",
+"s": 131.635,
+"e": 131.935,
+"matched": true
+},
+{
+"p": 9,
+"w": "sixty",
+"s": 131.935,
+"e": 132.135,
+"matched": false
+},
+{
+"p": 9,
+"w": "times",
+"s": 132.335,
+"e": 132.915,
+"matched": true
+},
+{
+"p": 9,
+"w": "every",
+"s": 132.915,
+"e": 133.155,
+"matched": true
+},
+{
+"p": 9,
+"w": "second",
+"s": 133.155,
+"e": 133.575,
+"matched": true
+},
+{
+"p": 9,
+"w": "working",
+"s": 133.915,
+"e": 134.395,
+"matched": true
+},
+{
+"p": 9,
+"w": "out",
+"s": 134.395,
+"e": 134.635,
+"matched": true
+},
+{
+"p": 9,
+"w": "the",
+"s": 134.635,
+"e": 134.775,
+"matched": true
+},
+{
+"p": 9,
+"w": "colour",
+"s": 134.775,
+"e": 135.095,
+"matched": false
+},
+{
+"p": 9,
+"w": "light",
+"s": 135.415,
+"e": 135.635,
+"matched": true
+},
+{
+"p": 9,
+"w": "and",
+"s": 135.855,
+"e": 135.895,
+"matched": true
+},
+{
+"p": 9,
+"w": "shadow",
+"s": 135.895,
+"e": 136.195,
+"matched": true
+},
+{
+"p": 9,
+"w": "of",
+"s": 136.195,
+"e": 136.455,
+"matched": true
+},
+{
+"p": 9,
+"w": "every",
+"s": 136.455,
+"e": 136.635,
+"matched": true
+},
+{
+"p": 9,
+"w": "dot",
+"s": 136.635,
+"e": 136.895,
+"matched": true
+},
+{
+"p": 9,
+"w": "the",
+"s": 137.735,
+"e": 137.815,
+"matched": true
+},
+{
+"p": 9,
+"w": "cpu",
+"s": 137.815,
+"e": 138.075,
+"matched": true
+},
+{
+"p": 9,
+"w": "decides",
+"s": 138.075,
+"e": 138.735,
+"matched": true
+},
+{
+"p": 9,
+"w": "what",
+"s": 138.735,
+"e": 139.175,
+"matched": true
+},
+{
+"p": 9,
+"w": "happens",
+"s": 139.175,
+"e": 139.555,
+"matched": true
+},
+{
+"p": 9,
+"w": "when",
+"s": 139.555,
+"e": 139.835,
+"matched": true
+},
+{
+"p": 9,
+"w": "you",
+"s": 139.835,
+"e": 139.975,
+"matched": true
+},
+{
+"p": 9,
+"w": "press",
+"s": 139.975,
+"e": 140.215,
+"matched": true
+},
+{
+"p": 9,
+"w": "a",
+"s": 140.215,
+"e": 140.395,
+"matched": true
+},
+{
+"p": 9,
+"w": "button",
+"s": 140.395,
+"e": 140.615,
+"matched": true
+},
+{
+"p": 9,
+"w": "the",
+"s": 141.415,
+"e": 141.495,
+"matched": true
+},
+{
+"p": 9,
+"w": "gpu",
+"s": 141.495,
+"e": 141.835,
+"matched": true
+},
+{
+"p": 9,
+"w": "paints",
+"s": 141.835,
+"e": 142.735,
+"matched": true
+},
+{
+"p": 9,
+"w": "the",
+"s": 142.735,
+"e": 143.115,
+"matched": true
+},
+{
+"p": 9,
+"w": "result",
+"s": 143.115,
+"e": 143.295,
+"matched": true
+},
+{
+"p": 10,
+"w": "then",
+"s": 144.133,
+"e": 144.453,
+"matched": true
+},
+{
+"p": 10,
+"w": "in",
+"s": 144.673,
+"e": 144.893,
+"matched": true
+},
+{
+"p": 10,
+"w": "2012",
+"s": 144.893,
+"e": 145.433,
+"matched": true
+},
+{
+"p": 10,
+"w": "something",
+"s": 145.433,
+"e": 146.413,
+"matched": true
+},
+{
+"p": 10,
+"w": "surprising",
+"s": 146.413,
+"e": 146.813,
+"matched": true
+},
+{
+"p": 10,
+"w": "happened",
+"s": 146.813,
+"e": 147.453,
+"matched": true
+},
+{
+"p": 10,
+"w": "researchers",
+"s": 148.093,
+"e": 148.393,
+"matched": true
+},
+{
+"p": 10,
+"w": "taught",
+"s": 148.393,
+"e": 148.873,
+"matched": true
+},
+{
+"p": 10,
+"w": "a",
+"s": 148.873,
+"e": 149.053,
+"matched": true
+},
+{
+"p": 10,
+"w": "computer",
+"s": 149.053,
+"e": 149.413,
+"matched": true
+},
+{
+"p": 10,
+"w": "to",
+"s": 149.413,
+"e": 149.753,
+"matched": true
+},
+{
+"p": 10,
+"w": "recognise",
+"s": 149.753,
+"e": 149.923,
+"matched": false
+},
+{
+"p": 10,
+"w": "what's",
+"s": 150.093,
+"e": 150.653,
+"matched": true
+},
+{
+"p": 10,
+"w": "in",
+"s": 150.653,
+"e": 150.753,
+"matched": true
+},
+{
+"p": 10,
+"w": "photos",
+"s": 150.753,
+"e": 151.073,
+"matched": true
+},
+{
+"p": 10,
+"w": "by",
+"s": 151.493,
+"e": 151.813,
+"matched": true
+},
+{
+"p": 10,
+"w": "showing",
+"s": 151.813,
+"e": 152.133,
+"matched": true
+},
+{
+"p": 10,
+"w": "it",
+"s": 152.133,
+"e": 152.353,
+"matched": true
+},
+{
+"p": 10,
+"w": "over",
+"s": 152.353,
+"e": 152.553,
+"matched": true
+},
+{
+"p": 10,
+"w": "a",
+"s": 152.553,
+"e": 152.553,
+"matched": true
+},
+{
+"p": 10,
+"w": "million",
+"s": 152.553,
+"e": 153.093,
+"matched": true
+},
+{
+"p": 10,
+"w": "pictures",
+"s": 153.093,
+"e": 153.593,
+"matched": true
+},
+{
+"p": 10,
+"w": "on",
+"s": 153.593,
+"e": 153.953,
+"matched": true
+},
+{
+"p": 10,
+"w": "just",
+"s": 153.953,
+"e": 154.213,
+"matched": true
+},
+{
+"p": 10,
+"w": "two",
+"s": 154.213,
+"e": 154.513,
+"matched": true
+},
+{
+"p": 10,
+"w": "gpus",
+"s": 154.513,
+"e": 154.833,
+"matched": true
+},
+{
+"p": 10,
+"w": "made",
+"s": 154.833,
+"e": 155.373,
+"matched": true
+},
+{
+"p": 10,
+"w": "for",
+"s": 155.373,
+"e": 155.613,
+"matched": true
+},
+{
+"p": 10,
+"w": "video",
+"s": 155.613,
+"e": 155.893,
+"matched": true
+},
+{
+"p": 10,
+"w": "games",
+"s": 155.893,
+"e": 156.293,
+"matched": true
+},
+{
+"p": 10,
+"w": "after",
+"s": 157.033,
+"e": 157.273,
+"matched": true
+},
+{
+"p": 10,
+"w": "less",
+"s": 157.273,
+"e": 157.533,
+"matched": true
+},
+{
+"p": 10,
+"w": "than",
+"s": 157.533,
+"e": 157.773,
+"matched": true
+},
+{
+"p": 10,
+"w": "a",
+"s": 157.773,
+"e": 157.853,
+"matched": true
+},
+{
+"p": 10,
+"w": "week",
+"s": 157.853,
+"e": 158.033,
+"matched": true
+},
+{
+"p": 10,
+"w": "of",
+"s": 158.033,
+"e": 158.173,
+"matched": true
+},
+{
+"p": 10,
+"w": "practice",
+"s": 158.173,
+"e": 158.553,
+"matched": true
+},
+{
+"p": 10,
+"w": "it",
+"s": 159.053,
+"e": 159.173,
+"matched": true
+},
+{
+"p": 10,
+"w": "recognised",
+"s": 159.173,
+"e": 159.323,
+"matched": false
+},
+{
+"p": 10,
+"w": "photos",
+"s": 159.473,
+"e": 160.113,
+"matched": true
+},
+{
+"p": 10,
+"w": "better",
+"s": 160.113,
+"e": 160.473,
+"matched": true
+},
+{
+"p": 10,
+"w": "than",
+"s": 160.473,
+"e": 160.733,
+"matched": true
+},
+{
+"p": 10,
+"w": "any",
+"s": 160.733,
+"e": 161.053,
+"matched": true
+},
+{
+"p": 10,
+"w": "program",
+"s": 161.053,
+"e": 161.393,
+"matched": true
+},
+{
+"p": 10,
+"w": "before",
+"s": 161.393,
+"e": 161.893,
+"matched": true
+},
+{
+"p": 10,
+"w": "it",
+"s": 161.893,
+"e": 162.113,
+"matched": true
+},
+{
+"p": 10,
+"w": "the",
+"s": 162.773,
+"e": 162.853,
+"matched": true
+},
+{
+"p": 10,
+"w": "chip",
+"s": 162.853,
+"e": 163.013,
+"matched": true
+},
+{
+"p": 10,
+"w": "built",
+"s": 163.013,
+"e": 163.233,
+"matched": true
+},
+{
+"p": 10,
+"w": "for",
+"s": 163.233,
+"e": 163.493,
+"matched": true
+},
+{
+"p": 10,
+"w": "games",
+"s": 163.493,
+"e": 163.733,
+"matched": true
+},
+{
+"p": 10,
+"w": "turned",
+"s": 163.733,
+"e": 164.113,
+"matched": true
+},
+{
+"p": 10,
+"w": "out",
+"s": 164.113,
+"e": 164.353,
+"matched": true
+},
+{
+"p": 10,
+"w": "to",
+"s": 164.353,
+"e": 164.493,
+"matched": true
+},
+{
+"p": 10,
+"w": "be",
+"s": 164.493,
+"e": 164.633,
+"matched": true
+},
+{
+"p": 10,
+"w": "perfect",
+"s": 164.633,
+"e": 164.893,
+"matched": true
+},
+{
+"p": 10,
+"w": "for",
+"s": 164.893,
+"e": 165.233,
+"matched": true
+},
+{
+"p": 10,
+"w": "ai",
+"s": 165.233,
+"e": 165.433,
+"matched": true
+},
+{
+"p": 11,
+"w": "so",
+"s": 166.332,
+"e": 166.532,
+"matched": true
+},
+{
+"p": 11,
+"w": "what",
+"s": 166.532,
+"e": 166.952,
+"matched": true
+},
+{
+"p": 11,
+"w": "is",
+"s": 166.952,
+"e": 167.092,
+"matched": true
+},
+{
+"p": 11,
+"w": "an",
+"s": 167.092,
+"e": 167.212,
+"matched": true
+},
+{
+"p": 11,
+"w": "ai",
+"s": 167.212,
+"e": 167.512,
+"matched": true
+},
+{
+"p": 11,
+"w": "like",
+"s": 167.512,
+"e": 167.972,
+"matched": true
+},
+{
+"p": 11,
+"w": "the",
+"s": 167.972,
+"e": 168.152,
+"matched": true
+},
+{
+"p": 11,
+"w": "talking",
+"s": 168.152,
+"e": 168.352,
+"matched": true
+},
+{
+"p": 11,
+"w": "assistants",
+"s": 168.352,
+"e": 168.832,
+"matched": true
+},
+{
+"p": 11,
+"w": "you",
+"s": 168.832,
+"e": 169.312,
+"matched": true
+},
+{
+"p": 11,
+"w": "hear",
+"s": 169.312,
+"e": 169.552,
+"matched": true
+},
+{
+"p": 11,
+"w": "about",
+"s": 169.552,
+"e": 169.812,
+"matched": true
+},
+{
+"p": 11,
+"w": "in",
+"s": 169.812,
+"e": 170.012,
+"matched": true
+},
+{
+"p": 11,
+"w": "the",
+"s": 170.012,
+"e": 170.092,
+"matched": true
+},
+{
+"p": 11,
+"w": "news",
+"s": 170.092,
+"e": 170.312,
+"matched": true
+},
+{
+"p": 11,
+"w": "inside",
+"s": 171.412,
+"e": 171.412,
+"matched": true
+},
+{
+"p": 11,
+"w": "it",
+"s": 171.872,
+"e": 172.092,
+"matched": true
+},
+{
+"p": 11,
+"w": "isn't",
+"s": 172.092,
+"e": 172.352,
+"matched": true
+},
+{
+"p": 11,
+"w": "a",
+"s": 172.352,
+"e": 172.412,
+"matched": true
+},
+{
+"p": 11,
+"w": "little",
+"s": 172.412,
+"e": 172.592,
+"matched": true
+},
+{
+"p": 11,
+"w": "brain",
+"s": 172.592,
+"e": 172.872,
+"matched": true
+},
+{
+"p": 11,
+"w": "it's",
+"s": 173.392,
+"e": 173.592,
+"matched": true
+},
+{
+"p": 11,
+"w": "an",
+"s": 173.592,
+"e": 173.652,
+"matched": true
+},
+{
+"p": 11,
+"w": "enormous",
+"s": 173.652,
+"e": 173.992,
+"matched": true
+},
+{
+"p": 11,
+"w": "table",
+"s": 173.992,
+"e": 174.512,
+"matched": true
+},
+{
+"p": 11,
+"w": "of",
+"s": 174.512,
+"e": 174.732,
+"matched": true
+},
+{
+"p": 11,
+"w": "numbers",
+"s": 174.732,
+"e": 175.032,
+"matched": true
+},
+{
+"p": 11,
+"w": "billions",
+"s": 175.472,
+"e": 175.752,
+"matched": true
+},
+{
+"p": 11,
+"w": "of",
+"s": 175.752,
+"e": 176.092,
+"matched": true
+},
+{
+"p": 11,
+"w": "them",
+"s": 176.092,
+"e": 176.252,
+"matched": true
+},
+{
+"p": 11,
+"w": "one",
+"s": 176.832,
+"e": 176.992,
+"matched": true
+},
+{
+"p": 11,
+"w": "well",
+"s": 176.992,
+"e": 177.252,
+"matched": true
+},
+{
+"p": 11,
+"w": "known",
+"s": 177.252,
+"e": 177.552,
+"matched": true
+},
+{
+"p": 11,
+"w": "ai",
+"s": 177.552,
+"e": 177.912,
+"matched": true
+},
+{
+"p": 11,
+"w": "held",
+"s": 177.912,
+"e": 178.472,
+"matched": true
+},
+{
+"p": 11,
+"w": "a",
+"s": 178.472,
+"e": 178.638,
+"matched": false
+},
+{
+"p": 11,
+"w": "hundred",
+"s": 178.638,
+"e": 178.805,
+"matched": false
+},
+{
+"p": 11,
+"w": "and",
+"s": 178.805,
+"e": 178.972,
+"matched": false
+},
+{
+"p": 11,
+"w": "seventy",
+"s": 178.972,
+"e": 179.138,
+"matched": false
+},
+{
+"p": 11,
+"w": "five",
+"s": 179.138,
+"e": 179.305,
+"matched": false
+},
+{
+"p": 11,
+"w": "billion",
+"s": 179.472,
+"e": 180.172,
+"matched": true
+},
+{
+"p": 12,
+"w": "your",
+"s": 180.921,
+"e": 181.101,
+"matched": true
+},
+{
+"p": 12,
+"w": "question",
+"s": 181.101,
+"e": 181.501,
+"matched": true
+},
+{
+"p": 12,
+"w": "is",
+"s": 181.501,
+"e": 181.681,
+"matched": true
+},
+{
+"p": 12,
+"w": "turned",
+"s": 181.681,
+"e": 181.921,
+"matched": true
+},
+{
+"p": 12,
+"w": "into",
+"s": 181.921,
+"e": 182.221,
+"matched": true
+},
+{
+"p": 12,
+"w": "numbers",
+"s": 182.221,
+"e": 182.461,
+"matched": true
+},
+{
+"p": 12,
+"w": "too",
+"s": 182.741,
+"e": 182.841,
+"matched": true
+},
+{
+"p": 12,
+"w": "then",
+"s": 183.441,
+"e": 183.501,
+"matched": true
+},
+{
+"p": 12,
+"w": "comes",
+"s": 183.501,
+"e": 183.701,
+"matched": true
+},
+{
+"p": 12,
+"w": "a",
+"s": 183.701,
+"e": 183.921,
+"matched": true
+},
+{
+"p": 12,
+"w": "sum",
+"s": 183.921,
+"e": 184.161,
+"matched": true
+},
+{
+"p": 12,
+"w": "you",
+"s": 184.161,
+"e": 184.421,
+"matched": true
+},
+{
+"p": 12,
+"w": "learned",
+"s": 184.421,
+"e": 184.641,
+"matched": true
+},
+{
+"p": 12,
+"w": "at",
+"s": 184.641,
+"e": 184.801,
+"matched": true
+},
+{
+"p": 12,
+"w": "school",
+"s": 184.801,
+"e": 185.101,
+"matched": true
+},
+{
+"p": 12,
+"w": "multiply",
+"s": 185.761,
+"e": 186.161,
+"matched": true
+},
+{
+"p": 12,
+"w": "some",
+"s": 186.161,
+"e": 186.421,
+"matched": true
+},
+{
+"p": 12,
+"w": "pairs",
+"s": 186.421,
+"e": 186.681,
+"matched": true
+},
+{
+"p": 12,
+"w": "of",
+"s": 186.681,
+"e": 186.901,
+"matched": true
+},
+{
+"p": 12,
+"w": "numbers",
+"s": 186.901,
+"e": 187.221,
+"matched": true
+},
+{
+"p": 12,
+"w": "then",
+"s": 187.681,
+"e": 187.821,
+"matched": true
+},
+{
+"p": 12,
+"w": "add",
+"s": 187.821,
+"e": 188.001,
+"matched": true
+},
+{
+"p": 12,
+"w": "them",
+"s": 188.001,
+"e": 188.181,
+"matched": true
+},
+{
+"p": 12,
+"w": "up",
+"s": 188.181,
+"e": 188.381,
+"matched": true
+},
+{
+"p": 12,
+"w": "to",
+"s": 189.101,
+"e": 189.121,
+"matched": true
+},
+{
+"p": 12,
+"w": "write",
+"s": 189.121,
+"e": 189.321,
+"matched": true
+},
+{
+"p": 12,
+"w": "each",
+"s": 189.321,
+"e": 189.641,
+"matched": true
+},
+{
+"p": 12,
+"w": "word",
+"s": 189.641,
+"e": 190.001,
+"matched": true
+},
+{
+"p": 12,
+"w": "of",
+"s": 190.001,
+"e": 190.201,
+"matched": true
+},
+{
+"p": 12,
+"w": "its",
+"s": 190.201,
+"e": 190.321,
+"matched": true
+},
+{
+"p": 12,
+"w": "answer",
+"s": 190.321,
+"e": 190.801,
+"matched": true
+},
+{
+"p": 12,
+"w": "the",
+"s": 191.301,
+"e": 191.421,
+"matched": true
+},
+{
+"p": 12,
+"w": "ai",
+"s": 191.421,
+"e": 191.701,
+"matched": true
+},
+{
+"p": 12,
+"w": "does",
+"s": 191.701,
+"e": 192.221,
+"matched": true
+},
+{
+"p": 12,
+"w": "sums",
+"s": 192.221,
+"e": 192.541,
+"matched": true
+},
+{
+"p": 12,
+"w": "like",
+"s": 192.541,
+"e": 193.021,
+"matched": true
+},
+{
+"p": 12,
+"w": "this",
+"s": 193.021,
+"e": 193.301,
+"matched": true
+},
+{
+"p": 12,
+"w": "across",
+"s": 193.301,
+"e": 193.821,
+"matched": true
+},
+{
+"p": 12,
+"w": "that",
+"s": 193.821,
+"e": 194.301,
+"matched": true
+},
+{
+"p": 12,
+"w": "whole",
+"s": 194.301,
+"e": 194.541,
+"matched": true
+},
+{
+"p": 12,
+"w": "table",
+"s": 194.541,
+"e": 194.881,
+"matched": true
+},
+{
+"p": 12,
+"w": "billions",
+"s": 195.401,
+"e": 195.661,
+"matched": true
+},
+{
+"p": 12,
+"w": "of",
+"s": 195.661,
+"e": 195.841,
+"matched": true
+},
+{
+"p": 12,
+"w": "times",
+"s": 195.841,
+"e": 196.041,
+"matched": true
+},
+{
+"p": 12,
+"w": "over",
+"s": 196.041,
+"e": 196.401,
+"matched": true
+},
+{
+"p": 13,
+"w": "then",
+"s": 196.768,
+"e": 196.988,
+"matched": true
+},
+{
+"p": 13,
+"w": "it",
+"s": 196.988,
+"e": 197.108,
+"matched": true
+},
+{
+"p": 13,
+"w": "does",
+"s": 197.108,
+"e": 197.368,
+"matched": true
+},
+{
+"p": 13,
+"w": "it",
+"s": 197.368,
+"e": 197.528,
+"matched": true
+},
+{
+"p": 13,
+"w": "all",
+"s": 197.528,
+"e": 197.788,
+"matched": true
+},
+{
+"p": 13,
+"w": "again",
+"s": 197.788,
+"e": 198.068,
+"matched": true
+},
+{
+"p": 13,
+"w": "for",
+"s": 198.068,
+"e": 198.468,
+"matched": true
+},
+{
+"p": 13,
+"w": "the",
+"s": 198.468,
+"e": 198.568,
+"matched": true
+},
+{
+"p": 13,
+"w": "next",
+"s": 198.568,
+"e": 198.748,
+"matched": true
+},
+{
+"p": 13,
+"w": "word",
+"s": 198.748,
+"e": 199.028,
+"matched": true
+},
+{
+"p": 13,
+"w": "just",
+"s": 199.488,
+"e": 199.688,
+"matched": true
+},
+{
+"p": 13,
+"w": "like",
+"s": 199.688,
+"e": 199.868,
+"matched": true
+},
+{
+"p": 13,
+"w": "the",
+"s": 199.868,
+"e": 200.048,
+"matched": true
+},
+{
+"p": 13,
+"w": "photo",
+"s": 200.048,
+"e": 200.268,
+"matched": true
+},
+{
+"p": 13,
+"w": "thousands",
+"s": 201.228,
+"e": 201.228,
+"matched": true
+},
+{
+"p": 13,
+"w": "of",
+"s": 201.228,
+"e": 201.608,
+"matched": true
+},
+{
+"p": 13,
+"w": "simple",
+"s": 201.608,
+"e": 201.888,
+"matched": true
+},
+{
+"p": 13,
+"w": "workers",
+"s": 201.888,
+"e": 202.328,
+"matched": true
+},
+{
+"p": 13,
+"w": "all",
+"s": 202.368,
+"e": 203.248,
+"matched": true
+},
+{
+"p": 13,
+"w": "moving",
+"s": 203.248,
+"e": 203.508,
+"matched": true
+},
+{
+"p": 13,
+"w": "together",
+"s": 203.508,
+"e": 203.868,
+"matched": true
+},
+{
+"p": 13,
+"w": "that's",
+"s": 204.808,
+"e": 204.968,
+"matched": true
+},
+{
+"p": 13,
+"w": "why",
+"s": 204.968,
+"e": 205.088,
+"matched": true
+},
+{
+"p": 13,
+"w": "ai",
+"s": 205.088,
+"e": 205.388,
+"matched": true
+},
+{
+"p": 13,
+"w": "runs",
+"s": 205.388,
+"e": 205.928,
+"matched": true
+},
+{
+"p": 13,
+"w": "on",
+"s": 205.928,
+"e": 206.228,
+"matched": true
+},
+{
+"p": 13,
+"w": "gpus",
+"s": 206.228,
+"e": 206.548,
+"matched": true
+},
+{
+"p": 14,
+"w": "teaching",
+"s": 207.764,
+"e": 208.044,
+"matched": true
+},
+{
+"p": 14,
+"w": "an",
+"s": 208.044,
+"e": 208.204,
+"matched": true
+},
+{
+"p": 14,
+"w": "ai",
+"s": 208.204,
+"e": 208.484,
+"matched": true
+},
+{
+"p": 14,
+"w": "in",
+"s": 208.484,
+"e": 208.844,
+"matched": true
+},
+{
+"p": 14,
+"w": "the",
+"s": 208.844,
+"e": 208.904,
+"matched": true
+},
+{
+"p": 14,
+"w": "first",
+"s": 208.904,
+"e": 209.104,
+"matched": true
+},
+{
+"p": 14,
+"w": "place",
+"s": 209.104,
+"e": 209.384,
+"matched": true
+},
+{
+"p": 14,
+"w": "is",
+"s": 209.384,
+"e": 209.604,
+"matched": true
+},
+{
+"p": 14,
+"w": "bigger",
+"s": 209.604,
+"e": 209.964,
+"matched": true
+},
+{
+"p": 14,
+"w": "still",
+"s": 209.964,
+"e": 210.324,
+"matched": true
+},
+{
+"p": 14,
+"w": "for",
+"s": 211.004,
+"e": 211.044,
+"matched": true
+},
+{
+"p": 14,
+"w": "one",
+"s": 211.044,
+"e": 211.304,
+"matched": true
+},
+{
+"p": 14,
+"w": "recent",
+"s": 211.304,
+"e": 211.644,
+"matched": true
+},
+{
+"p": 14,
+"w": "ai",
+"s": 211.644,
+"e": 211.964,
+"matched": true
+},
+{
+"p": 14,
+"w": "its",
+"s": 212.664,
+"e": 212.704,
+"matched": true
+},
+{
+"p": 14,
+"w": "makers",
+"s": 212.704,
+"e": 212.944,
+"matched": true
+},
+{
+"p": 14,
+"w": "linked",
+"s": 212.944,
+"e": 213.344,
+"matched": true
+},
+{
+"p": 14,
+"w": "up",
+"s": 213.344,
+"e": 213.604,
+"matched": true
+},
+{
+"p": 14,
+"w": "sixteen",
+"s": 213.604,
+"e": 213.99,
+"matched": false
+},
+{
+"p": 14,
+"w": "thousand",
+"s": 213.99,
+"e": 214.377,
+"matched": false
+},
+{
+"p": 14,
+"w": "gpus",
+"s": 214.764,
+"e": 215.044,
+"matched": true
+},
+{
+"p": 14,
+"w": "in",
+"s": 215.364,
+"e": 215.644,
+"matched": true
+},
+{
+"p": 14,
+"w": "a",
+"s": 215.644,
+"e": 215.744,
+"matched": true
+},
+{
+"p": 14,
+"w": "giant",
+"s": 215.744,
+"e": 216.044,
+"matched": true
+},
+{
+"p": 14,
+"w": "building",
+"s": 216.044,
+"e": 216.524,
+"matched": true
+},
+{
+"p": 14,
+"w": "and",
+"s": 216.524,
+"e": 217.184,
+"matched": true
+},
+{
+"p": 14,
+"w": "ran",
+"s": 217.184,
+"e": 217.384,
+"matched": true
+},
+{
+"p": 14,
+"w": "them",
+"s": 217.384,
+"e": 217.604,
+"matched": true
+},
+{
+"p": 14,
+"w": "for",
+"s": 217.604,
+"e": 217.804,
+"matched": true
+},
+{
+"p": 14,
+"w": "weeks",
+"s": 217.804,
+"e": 218.104,
+"matched": true
+},
+{
+"p": 14,
+"w": "a",
+"s": 219.104,
+"e": 219.124,
+"matched": true
+},
+{
+"p": 14,
+"w": "cpu",
+"s": 219.124,
+"e": 219.404,
+"matched": true
+},
+{
+"p": 14,
+"w": "keeps",
+"s": 219.404,
+"e": 219.844,
+"matched": true
+},
+{
+"p": 14,
+"w": "it",
+"s": 219.844,
+"e": 220.044,
+"matched": true
+},
+{
+"p": 14,
+"w": "all",
+"s": 220.044,
+"e": 220.404,
+"matched": true
+},
+{
+"p": 14,
+"w": "organised",
+"s": 220.404,
+"e": 221.034,
+"matched": false
+},
+{
+"p": 14,
+"w": "and",
+"s": 221.664,
+"e": 221.764,
+"matched": true
+},
+{
+"p": 14,
+"w": "today's",
+"s": 221.764,
+"e": 222.224,
+"matched": true
+},
+{
+"p": 14,
+"w": "gpus",
+"s": 222.224,
+"e": 222.464,
+"matched": true
+},
+{
+"p": 14,
+"w": "even",
+"s": 222.464,
+"e": 223.024,
+"matched": true
+},
+{
+"p": 14,
+"w": "have",
+"s": 223.024,
+"e": 223.204,
+"matched": true
+},
+{
+"p": 14,
+"w": "special",
+"s": 223.204,
+"e": 223.484,
+"matched": true
+},
+{
+"p": 14,
+"w": "parts",
+"s": 223.484,
+"e": 223.904,
+"matched": true
+},
+{
+"p": 14,
+"w": "built",
+"s": 223.904,
+"e": 224.284,
+"matched": true
+},
+{
+"p": 14,
+"w": "just",
+"s": 224.284,
+"e": 224.684,
+"matched": true
+},
+{
+"p": 14,
+"w": "for",
+"s": 224.684,
+"e": 224.944,
+"matched": true
+},
+{
+"p": 14,
+"w": "ai's",
+"s": 224.944,
+"e": 225.484,
+"matched": true
+},
+{
+"p": 14,
+"w": "sums",
+"s": 225.484,
+"e": 225.704,
+"matched": true
+},
+{
+"p": 15,
+"w": "so",
+"s": 226.503,
+"e": 227.483,
+"matched": true
+},
+{
+"p": 15,
+"w": "inside",
+"s": 227.823,
+"e": 228.423,
+"matched": true
+},
+{
+"p": 15,
+"w": "your",
+"s": 228.423,
+"e": 228.763,
+"matched": true
+},
+{
+"p": 15,
+"w": "computer",
+"s": 228.763,
+"e": 229.103,
+"matched": true
+},
+{
+"p": 15,
+"w": "there",
+"s": 229.103,
+"e": 229.463,
+"matched": true
+},
+{
+"p": 15,
+"w": "are",
+"s": 229.463,
+"e": 229.643,
+"matched": true
+},
+{
+"p": 15,
+"w": "two",
+"s": 229.643,
+"e": 229.983,
+"matched": true
+},
+{
+"p": 15,
+"w": "brains",
+"s": 229.983,
+"e": 230.283,
+"matched": true
+},
+{
+"p": 15,
+"w": "the",
+"s": 231.303,
+"e": 231.363,
+"matched": true
+},
+{
+"p": 15,
+"w": "cpu",
+"s": 231.363,
+"e": 231.623,
+"matched": true
+},
+{
+"p": 15,
+"w": "a",
+"s": 232.863,
+"e": 232.943,
+"matched": true
+},
+{
+"p": 15,
+"w": "few",
+"s": 232.943,
+"e": 233.183,
+"matched": true
+},
+{
+"p": 15,
+"w": "clever",
+"s": 233.183,
+"e": 233.543,
+"matched": true
+},
+{
+"p": 15,
+"w": "workers",
+"s": 233.543,
+"e": 234.043,
+"matched": true
+},
+{
+"p": 15,
+"w": "who",
+"s": 234.043,
+"e": 234.483,
+"matched": true
+},
+{
+"p": 15,
+"w": "think",
+"s": 234.483,
+"e": 234.763,
+"matched": true
+},
+{
+"p": 15,
+"w": "things",
+"s": 234.763,
+"e": 235.003,
+"matched": true
+},
+{
+"p": 15,
+"w": "through",
+"s": 235.003,
+"e": 235.363,
+"matched": true
+},
+{
+"p": 15,
+"w": "one",
+"s": 235.983,
+"e": 236.143,
+"matched": true
+},
+{
+"p": 15,
+"w": "step",
+"s": 236.143,
+"e": 236.583,
+"matched": true
+},
+{
+"p": 15,
+"w": "at",
+"s": 236.583,
+"e": 236.903,
+"matched": true
+},
+{
+"p": 15,
+"w": "a",
+"s": 236.903,
+"e": 236.983,
+"matched": true
+},
+{
+"p": 15,
+"w": "time",
+"s": 236.983,
+"e": 237.363,
+"matched": true
+},
+{
+"p": 15,
+"w": "the",
+"s": 237.923,
+"e": 238.023,
+"matched": true
+},
+{
+"p": 15,
+"w": "gpu",
+"s": 238.023,
+"e": 238.283,
+"matched": true
+},
+{
+"p": 15,
+"w": "thousands",
+"s": 239.063,
+"e": 239.363,
+"matched": true
+},
+{
+"p": 15,
+"w": "of",
+"s": 239.363,
+"e": 239.823,
+"matched": true
+},
+{
+"p": 15,
+"w": "simple",
+"s": 239.823,
+"e": 240.063,
+"matched": true
+},
+{
+"p": 15,
+"w": "workers",
+"s": 240.063,
+"e": 240.523,
+"matched": true
+},
+{
+"p": 15,
+"w": "who",
+"s": 240.523,
+"e": 240.863,
+"matched": true
+},
+{
+"p": 15,
+"w": "do",
+"s": 240.863,
+"e": 240.983,
+"matched": true
+},
+{
+"p": 15,
+"w": "the",
+"s": 240.983,
+"e": 241.143,
+"matched": true
+},
+{
+"p": 15,
+"w": "same",
+"s": 241.143,
+"e": 241.443,
+"matched": true
+},
+{
+"p": 15,
+"w": "thing",
+"s": 241.443,
+"e": 241.863,
+"matched": true
+},
+{
+"p": 15,
+"w": "all",
+"s": 241.863,
+"e": 242.23,
+"matched": false
+},
+{
+"p": 15,
+"w": "together",
+"s": 242.23,
+"e": 242.596,
+"matched": false
+},
+{
+"p": 15,
+"w": "for",
+"s": 242.963,
+"e": 243.303,
+"matched": true
+},
+{
+"p": 15,
+"w": "photos",
+"s": 243.303,
+"e": 243.583,
+"matched": true
+},
+{
+"p": 15,
+"w": "games",
+"s": 243.903,
+"e": 244.043,
+"matched": true
+},
+{
+"p": 15,
+"w": "and",
+"s": 244.543,
+"e": 244.723,
+"matched": true
+},
+{
+"p": 15,
+"w": "ai",
+"s": 244.723,
+"e": 244.983,
+"matched": true
+},
+{
+"p": 15,
+"w": "one",
+"s": 245.983,
+"e": 246.163,
+"matched": true
+},
+{
+"p": 15,
+"w": "plans",
+"s": 246.163,
+"e": 246.463,
+"matched": true
+},
+{
+"p": 15,
+"w": "the",
+"s": 247.083,
+"e": 247.323,
+"matched": true
+},
+{
+"p": 15,
+"w": "other",
+"s": 247.323,
+"e": 247.523,
+"matched": true
+},
+{
+"p": 15,
+"w": "paints",
+"s": 247.523,
+"e": 247.743,
+"matched": true
+},
+{
+"p": 15,
+"w": "and",
+"s": 248.143,
+"e": 248.203,
+"matched": true
+},
+{
+"p": 15,
+"w": "together",
+"s": 248.203,
+"e": 248.503,
+"matched": true
+},
+{
+"p": 15,
+"w": "they",
+"s": 248.503,
+"e": 249.343,
+"matched": true
+},
+{
+"p": 15,
+"w": "bring",
+"s": 249.343,
+"e": 249.703,
+"matched": true
+},
+{
+"p": 15,
+"w": "it",
+"s": 249.703,
+"e": 249.883,
+"matched": true
+},
+{
+"p": 15,
+"w": "all",
+"s": 249.883,
+"e": 250.243,
+"matched": true
+},
+{
+"p": 15,
+"w": "to",
+"s": 250.243,
+"e": 250.583,
+"matched": true
+},
+{
+"p": 15,
+"w": "your",
+"s": 250.583,
+"e": 250.783,
+"matched": true
+},
+{
+"p": 15,
+"w": "screen",
+"s": 250.783,
+"e": 251.123,
+"matched": true
+}
+]
+}

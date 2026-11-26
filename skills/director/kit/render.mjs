@@ -1,6 +1,7 @@
 // Render the scenes and encode them with the narration.
 //   node src/render.mjs cuts/cut-01.mp4 [--from 0] [--to 10] [--fps 30] [--workers N] [--gop 60]
-//       [--enc x264|vaapi] [--preset ultrafast] [--crf 16] [--tune animation] [--qp 18] [--device /dev/dri/renderD128] [--pipe]
+//       [--enc x264|vaapi|videotoolbox|nvenc|qsv|amf] [--preset ultrafast] [--crf 16] [--tune animation] [--qp 18]
+//       [--bitrate 12M] [--device /dev/dri/renderD128] [--pipe]
 //   node src/render.mjs OUTDIR --stills 1.5,3,7.25          (full-size PNGs, one per time)
 //   [--scene scene.mjs]  scene module in src/, e.g. motion-tests.mjs
 // Without audio/narration.m4a (look frame, style frames, motion tests) the video gets a silent track;
@@ -12,7 +13,9 @@
 // keyframe. A frame that repeats the previous one is never drawn or encoded: it is written into the H.264 stream
 // directly as a picture of skipped macroblocks (h264.mjs), so the file keeps a constant frame rate. The jobs are
 // joined without re-encoding.
-//   --enc vaapi  encodes on the Intel/AMD GPU instead of x264: a little faster, smaller files, slightly lower quality at --qp 18.
+//   --enc vaapi  encodes on the Intel/AMD GPU instead of x264 (Linux): a little faster, smaller files, slightly lower quality at --qp 18.
+//   --enc videotoolbox (macOS), nvenc, qsv, amf: the other GPU encoders, through ffmpeg. Their settings come from the
+//                FFmpeg documentation and have not been run on such a machine yet; a stream the renderer can't use stops the render.
 //   --pipe       encodes through an ffmpeg process, as happens by itself when native/enc.node can't be loaded.
 //   PROF=1       prints where the time went.
 import { spawn, spawnSync, fork } from 'node:child_process';
@@ -138,17 +141,26 @@ if (process.env.RENDER_WORKER) {
   // The encoder: x264, or h264_vaapi on the GPU. One reference frame, no B-frames and CAVLC are what h264.mjs needs
   // to add the held frames to the stream. encoder.mjs runs it inside the worker (native/enc.node) or, without that,
   // as an ffmpeg process that makes a keyframe exactly every `gop` pictures.
-  const tune = opt('tune', ''), encoder = opt('enc', 'x264'), vaapi = encoder === 'vaapi', device = opt('device', '/dev/dri/renderD128');
-  const raw = ['-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', vaapi ? 'nv12' : 'yuv420p', '-s', `${Wd}x${Ht}`, '-r', String(fps), '-i', '-'];
+  const tune = opt('tune', ''), encoder = opt('enc', 'x264'), vaapi = encoder === 'vaapi', hw = encoder !== 'x264', device = opt('device', '/dev/dri/renderD128');
+  const raw = ['-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', hw ? 'nv12' : 'yuv420p', '-s', `${Wd}x${Ht}`, '-r', String(fps), '-i', '-'];
   const tail = ['-g', String(gop), '-keyint_min', String(gop), '-bf', '0', '-flush_packets', '1', '-f', 'h264', 'pipe:1'];
   // x264: ultrafast at crf 16 looks the same as slower presets (SSIM 0.999 to a lossless encode for both ultrafast
   // and medium); its files are about twice the size.
   const x = { preset: opt('preset', 'ultrafast'), crf: opt('crf', '16'), ...(tune ? { tune } : {}), threads: '1', refs: '1', coder: 'vlc', sc_threshold: '0' };
-  const v = { qp: opt('qp', '18'), coder: 'cavlc' };
+  const qp = opt('qp', '18'), v = { qp, coder: 'cavlc' };
   const flags = o => Object.entries(o).flatMap(([k, val]) => ['-' + k, val]), dict = o => Object.entries(o).map(([k, val]) => `${k}=${val}`).join(':');
-  const enc = { fps, nv12: vaapi, gop, device, pipe: args.includes('--pipe'), codec: vaapi ? 'h264_vaapi' : 'libx264',
-    nativeOpts: vaapi ? dict({ ...v, async_depth: '4' }) : dict({ ...x, 'forced-idr': '1' }),
-    ffArgs: vaapi ? ['-vaapi_device', device, ...raw, '-vf', 'hwupload', '-c:v', 'h264_vaapi', ...flags(v), ...tail] : [...raw, '-c:v', 'libx264', ...flags(x), ...tail] };
+  const codecs = {
+    x264: [...raw, '-c:v', 'libx264', ...flags(x), ...tail],
+    vaapi: ['-vaapi_device', device, ...raw, '-vf', 'hwupload', '-c:v', 'h264_vaapi', ...flags(v), ...tail],
+    videotoolbox: [...raw, '-c:v', 'h264_videotoolbox', '-profile:v', 'baseline', '-coder', 'cavlc', '-b:v', opt('bitrate', '12M'), '-allow_sw', '0', ...tail],
+    nvenc: [...raw, '-c:v', 'h264_nvenc', '-rc', 'constqp', '-qp', qp, '-coder', 'cavlc', '-refs', '1', '-strict_gop', '1', ...tail],
+    qsv: [...raw, '-c:v', 'h264_qsv', '-global_quality', qp, '-cavlc', '1', '-refs', '1', '-idr_interval', '0', ...tail],
+    amf: [...raw, '-c:v', 'h264_amf', '-rc', 'cqp', '-qp_i', qp, '-qp_p', qp, '-coder', 'cavlc', '-refs', '1', '-header_spacing', String(gop), ...tail],
+  };
+  if (!codecs[encoder]) fail(`unknown --enc ${encoder}: use one of ${Object.keys(codecs).join(', ')}`);
+  // only x264 and vaapi can run inside the worker
+  const enc = { fps, nv12: hw, gop, device, pipe: args.includes('--pipe') || (hw && !vaapi), codec: vaapi ? 'h264_vaapi' : 'libx264',
+    nativeOpts: vaapi ? dict({ ...v, async_depth: '4' }) : dict({ ...x, 'forced-idr': '1' }), ffArgs: codecs[encoder] };
   // The narration, cut to the video's length while the frames render. AAC from the start of the file is copied as
   // it is; anything else is encoded.
   const audio = path.join(ROOT, process.env.VO_DIR || 'audio', 'narration.m4a');
