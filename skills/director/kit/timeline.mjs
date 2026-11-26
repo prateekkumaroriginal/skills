@@ -44,7 +44,8 @@ export function timeline(seq) {
     for (let i = 0; i < k.length - 1; i++) if (k[i].mix) spans.push([k[i].at, k[i + 1].at]);
   }
   // Seek: write every animated property's value at time t into its target.
-  function seek(t) {
+  // dirty (a Map), when given, collects the targets whose value changed: target -> its opacity before, if that changed.
+  function seek(t, dirty) {
     for (const [target, props] of tracks) for (const [prop, tr] of props) {
       const k = tr.kfs; let v;
       if (t <= k[0].at) v = k[0].value;
@@ -55,7 +56,10 @@ export function timeline(seq) {
         const a = k[lo], b = k[lo + 1], span = b.at - a.at;
         v = !a.mix || span <= 0 ? (span <= 0 ? b.value : a.value) : a.mix(a.fn((t - a.at) / span));
       }
-      target[prop] = v;
+      if (target[prop] !== v) {
+        if (dirty) { if (prop === 'opacity') dirty.set(target, target.opacity); else if (!dirty.has(target)) dirty.set(target, undefined); }
+        target[prop] = v;
+      }
     }
   }
   return { seek, spans, duration: Math.max(0, ...spans.map(s => s[1])) };
