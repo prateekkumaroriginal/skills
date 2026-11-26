@@ -1,0 +1,64 @@
+{
+  "benchmark": "director-kit",
+  "version": 1,
+  "date": "2026-11-26",
+  "kit": "308874e",
+  "video": {
+    "seconds": 253.1,
+    "frames": 7593,
+    "size": "1920x1080",
+    "fps": 30
+  },
+  "config": {
+    "os": "Windows 11 Home Single Language",
+    "arch": "x64",
+    "cpu": "11th Gen Intel(R) Core(TM) i5-1155G7 @ 2.50GHz",
+    "threads": 8,
+    "memoryGB": 16,
+    "gpu": [
+      "Intel(R) Iris(R) Xe Graphics"
+    ],
+    "power": "battery",
+    "node": "v24.18.0",
+    "ffmpeg": "9.1-full_build-www.gyan.dev",
+    "canvas": "0.1.65"
+  },
+  "results": [
+    {
+      "encoder": "x264",
+      "path": "ffmpeg pipe",
+      "workers": 4,
+      "runs": [
+        50.77,
+        47.79
+      ],
+      "best": 47.79,
+      "xRealtime": 5.3,
+      "fps": 158.9,
+      "framesDrawn": 4540,
+      "framesHeld": 3053,
+      "fileMB": 79.9,
+      "valid": true
+    },
+    {
+      "encoder": "nvenc",
+      "error": "[h264_nvenc @ 000001c72c513ec0] Cannot load nvcuda.dll [vost#0:0/h264_nvenc @ 000001c72c513c80] [enc:h264_nvenc @ 000001c72c459bc0] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height. [vf#0:0 @ 000001c72c515440] Error sending frames to consumers: Operati"
+    },
+    {
+      "encoder": "qsv",
+      "path": "ffmpeg pipe",
+      "workers": 4,
+      "runs": [
+        44.78,
+        43.79
+      ],
+      "best": 43.79,
+      "xRealtime": 5.78,
+      "fps": 173.4,
+      "framesDrawn": 4540,
+      "framesHeld": 3053,
+      "fileMB": 32.2,
+      "valid": true
+    }
+  ]
+}
