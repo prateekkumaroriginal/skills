@@ -26,7 +26,7 @@ The renderer draws with Skia in parallel worker processes and encodes H.264 insi
 - **Camera moves are the expensive frames**: every node under the moving group is repainted on each of them. Hold the camera still whenever the scene allows.
 - **The result is the same picture as a full redraw**, pixel for pixel. This relies on each node's paint depending only on that node (and its ancestors' transform and opacity). After adding a custom kind, run `node src/verify.mjs`; it reports any frame that differs.
 - **`native/enc.node` is compiled for this machine.** Rebuild it with `src/native/build.sh` after an FFmpeg or Node upgrade. Without it the renderer pipes frames to `ffmpeg`, which is slower.
-- **`--enc vaapi`** encodes on the GPU (Linux, Intel or AMD). It is a little faster and the files are about half the size, at slightly lower quality than the default x264 settings. `--enc videotoolbox` (macOS), `nvenc`, `qsv` and `amf` exist but are untested.
+- **`--enc vaapi`** encodes on the GPU (Linux, Intel or AMD). It is a little faster and the files are about half the size, at slightly lower quality than the default x264 settings. `--enc qsv` (Intel Quick Sync) has been run on Windows 11 with Iris Xe graphics. `--enc videotoolbox` (macOS), `nvenc` and `amf` exist but are untested.
 
 ## The scene contract
 

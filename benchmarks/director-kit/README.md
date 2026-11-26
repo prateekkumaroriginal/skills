@@ -51,7 +51,8 @@ Nothing else is recorded: no host name, user name, file paths or serial numbers.
 
 ## Limits
 
-- **Tested on Linux only so far** (x86-64, Intel graphics). The kit and this benchmark are written to run on macOS and Windows, but neither has been run there yet.
-- **Only the VAAPI GPU encoder is tested.** The VideoToolbox, NVENC, Quick Sync and AMF settings come from the FFmpeg documentation. If one produces a stream the kit can't use, the benchmark records that encoder as failed and keeps the x264 result.
+- **Tested on Linux and Windows 11** (both x86-64 with Intel graphics). It is written to run on macOS too, but has not been run there yet.
+- **Only the VAAPI and Quick Sync GPU encoders are tested.** The VideoToolbox, NVENC and AMF settings come from the FFmpeg documentation. If one produces a stream the kit can't use, the benchmark records that encoder as failed and keeps the x264 result.
+- **Times vary between runs on a laptop.** The Windows laptop in `RESULTS.md` rendered its first x264 pass in 26.6 s and later ones in 40 to 51 s, on battery. Compare all the runs in the JSON files, not only the best.
 - **The kit's in-process encoder is built for Linux x86-64 with FFmpeg 6.1.** Elsewhere the kit pipes frames to an `ffmpeg` process, which is slower. The result says which path ran ("in-process" or "ffmpeg pipe").
 - **Fonts are bundled**, so every machine draws the same picture: Lexend (SIL Open Font License) and DejaVu Sans; icons are from Lucide (ISC). Their licences are next to the files in `project/assets/`.
