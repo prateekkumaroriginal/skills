@@ -25,8 +25,8 @@ function table() {
   const lines = ['# Results', '', 'Time to render the benchmark video, best run, and how many times faster than the video plays. Lower time is better.', 'Rebuilt by `node bench.mjs --table` from `results/*.json`.', '',
     '| Date | CPU | Threads | RAM | OS | GPU | Power | Video | x264 | GPU encoder | Kit |', '|---|---|---|---|---|---|---|---|---|---|---|'];
   for (const d of rows) {
-    const c = d.config, x = d.results.find(r => r.encoder === 'x264'), g = d.results.find(r => r.encoder !== 'x264' && !r.error) ?? d.results.find(r => r.encoder !== 'x264');
-    lines.push(`| ${d.date} | ${c.cpu} | ${c.threads} | ${c.memoryGB} GB | ${c.os} ${c.arch} | ${c.gpu.join('; ') || 'none found'} | ${c.power} | ${d.video.seconds} s | ${cell(x)}${x && !x.error ? ` ${x.path}` : ''} | ${g ? `${g.encoder}: ${cell(g)}` : 'none'} | ${d.kit} |`);
+    const c = d.config, x = d.results.find(r => r.encoder === 'x264'), gs = d.results.filter(r => r.encoder !== 'x264'), g = gs.find(r => !r.error);
+    lines.push(`| ${d.date} | ${c.cpu} | ${c.threads} | ${c.memoryGB} GB | ${c.os} ${c.arch} | ${c.gpu.join('; ') || 'none found'} | ${c.power} | ${d.video.seconds} s | ${cell(x)}${x && !x.error ? ` ${x.path}` : ''} | ${g ? `${g.encoder}: ${cell(g)}` : gs.length ? `failed (${gs.map(r => r.encoder).join(', ')})` : 'none'} | ${d.kit} |`);
   }
   fs.writeFileSync(path.join(HERE, 'RESULTS.md'), lines.join('\n') + '\n');
 }
