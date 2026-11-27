@@ -28,6 +28,8 @@ The renderer draws with Skia in parallel worker processes and encodes H.264 insi
 - **`native/enc.node` is compiled for this machine.** Rebuild it with `src/native/build.sh` after an FFmpeg or Node upgrade. Without it the renderer pipes frames to `ffmpeg`, which is slower.
 - **`--enc vaapi`** encodes on the GPU (Linux, Intel or AMD). It is a little faster and the files are about half the size, at slightly lower quality than the default x264 settings. `--enc qsv` (Intel Quick Sync) has been run on Windows 11 with Iris Xe graphics. `--enc videotoolbox` (macOS), `nvenc` and `amf` exist but are untested.
 
+Before changing the renderer for speed, read `render-speed-notes.md` in the director skill folder: the approaches already measured and dropped, with their numbers.
+
 ## The scene contract
 
 `render.mjs` imports `scene.mjs` in each worker and calls `build()` once. For every frame that changes it seeks the timeline built from `seq` to `t` and calls `draw(ctx, t)`. `TIMING` holds `audio/timing.json`. Every frame must depend only on `t`, so a still at 12.5 s is the same whether or not 12.4 s was drawn before it:
