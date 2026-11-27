@@ -58,7 +58,7 @@ Then discuss the script with the user. Present it scene by scene, take their cha
 
 ### 3. Elementation
 
-Load the `elementation` skill, inventory the confirmed script's elements and get the look approved from one composed frame. Done when the user has approved the look frame and `style.md` gives every element kind a look.
+Load the `elementation` skill, inventory the confirmed script's elements and get the look approved from its elements page. Done when the user has approved the elements page and `style.md` gives every element kind a look.
 
 ### 4. Style frames
 
