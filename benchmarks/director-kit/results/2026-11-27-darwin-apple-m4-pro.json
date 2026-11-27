@@ -1,0 +1,46 @@
+{
+  "benchmark": "director-kit",
+  "version": 1,
+  "date": "2026-11-27",
+  "kit": "c35c287",
+  "video": {
+    "seconds": 253.1,
+    "frames": 7593,
+    "size": "1920x1080",
+    "fps": 30
+  },
+  "config": {
+    "os": "macOS 15.3.1",
+    "arch": "arm64",
+    "cpu": "Apple M4 Pro",
+    "threads": 12,
+    "memoryGB": 24,
+    "gpu": [],
+    "power": "battery",
+    "node": "v24.15.0",
+    "ffmpeg": "8.1.1",
+    "canvas": "0.1.65"
+  },
+  "results": [
+    {
+      "encoder": "x264",
+      "path": "ffmpeg pipe",
+      "workers": 6,
+      "runs": [
+        7.9,
+        6.64
+      ],
+      "best": 6.64,
+      "xRealtime": 38.12,
+      "fps": 1143.5,
+      "framesDrawn": 4540,
+      "framesHeld": 3053,
+      "fileMB": 79.8,
+      "valid": true
+    },
+    {
+      "encoder": "videotoolbox",
+      "error": "[h264_videotoolbox] Cannot create compression session: -12908 [h264_videotoolbox] Try -allow_sw 1. The hardware encoder may be busy, or not supported. [vost#0:0/h264_videotoolbox] [enc:h264_videotoolbox] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height"
+    }
+  ]
+}
